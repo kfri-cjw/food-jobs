@@ -89,6 +89,8 @@ def to_job(r: dict) -> dict | None:
     ncs = _s(r.get("ncsCdNmLst"))
     if str(r.get("ongoingYn", "Y")).upper() == "N":
         return None
+    if C.is_public_noise(title):
+        return None
     food_job = C.is_food_job(title) or C.contains_any(ncs, config.FOOD_NCS)
     food_org = C.is_food_institution(org)
     if not (food_job or food_org):
