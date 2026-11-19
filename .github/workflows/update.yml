@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/jobs.json
+          git add docs/data/jobs.json docs/data/salary_public.json 2>/dev/null || git add docs/data/jobs.json
           if git diff --cached --quiet; then
             echo "변경 없음"
           else
