@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19 09:44",
+ "updated_at": "2026-11-19 12:20",
  "today": "2026-11-19",
  "sources": {
   "alio": {
@@ -7,25 +7,85 @@
    "state": "ok",
    "raw": 7,
    "count": 6,
-   "message": null
+   "message": null,
+   "fields": [
+    "acbgCondNmLst",
+    "aplyQlfcCn",
+    "hireTypeNmLst",
+    "instNm",
+    "ncsCdNmLst",
+    "ongoingYn",
+    "pbancBgngYmd",
+    "pbancEndYmd",
+    "prefCondCn",
+    "recrutNope",
+    "recrutPbancTtl",
+    "recrutPblntSn",
+    "recrutSe",
+    "recrutSeNm",
+    "replmprYn",
+    "workRgnNmLst"
+   ]
   },
   "work24": {
    "label": "고용24",
    "state": "ok",
    "raw": 5,
    "count": 4,
-   "message": null
+   "message": null,
+   "fields": [
+    "busino",
+    "career",
+    "closeDt",
+    "company",
+    "empTpCd",
+    "holidayTpNm",
+    "indTpNm",
+    "jobsCd",
+    "minEdubg",
+    "regDt",
+    "region",
+    "sal",
+    "salTpNm",
+    "title",
+    "wantedAuthNo",
+    "wantedInfoUrl"
+   ]
   },
   "saramin": {
    "label": "사람인",
    "state": "ok",
    "raw": 6,
    "count": 5,
-   "message": null
+   "message": null,
+   "fields": [
+    "active",
+    "close-type",
+    "company",
+    "expiration-timestamp",
+    "id",
+    "keyword",
+    "modification-timestamp",
+    "opening-timestamp",
+    "position",
+    "posting-timestamp",
+    "salary",
+    "url"
+   ]
   }
  },
  "total": 13,
  "new_today": 13,
+ "salary": {
+  "count": 6,
+  "public_updated": "2026-11-19",
+  "public_avg": {
+   "all": 3948,
+   "n": 4,
+   "year": 2025,
+   "by_type": {}
+  }
+ },
  "jobs": [
   {
    "id": "alio:290002",
@@ -51,7 +111,18 @@
    "url": "https://job.alio.go.kr/recruitview.do?idx=290002",
    "food": "직무",
    "detail": "경영.회계.사무",
-   "first_seen": "2026-11-19"
+   "quals": null,
+   "headcount": null,
+   "first_seen": "2026-11-19",
+   "salary": {
+    "kind": "public_start",
+    "amount": 3890,
+    "year": 2025,
+    "regular": false,
+    "type": "준정부기관",
+    "avg_all": 3948,
+    "avg_type": null
+   }
   },
   {
    "id": "alio:290001",
@@ -77,7 +148,32 @@
    "url": "https://job.alio.go.kr/recruitview.do?idx=290001",
    "food": "직무",
    "detail": "식품가공, 교육.자연.사회과학",
-   "first_seen": "2026-11-19"
+   "quals": {
+    "certs": [
+     "식품기사"
+    ],
+    "langs": [
+     "TOEIC 800"
+    ],
+    "majors": [
+     "식품공학",
+     "식품영양"
+    ],
+    "limits": [],
+    "text": "식품공학·식품영양 관련 학과 박사학위 소지자, 식품기사 자격 소지자 우대",
+    "pref": "TOEIC 800점 이상"
+   },
+   "headcount": 2,
+   "first_seen": "2026-11-19",
+   "salary": {
+    "kind": "public_start",
+    "amount": 4120,
+    "year": 2025,
+    "regular": true,
+    "type": "기타공공기관",
+    "avg_all": 3948,
+    "avg_type": null
+   }
   },
   {
    "id": "work24:K151612611190004",
@@ -103,6 +199,7 @@
    "url": "https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190004",
    "food": "직무",
    "detail": "면류, 마카로니 및 유사 식품 제조업",
+   "salary": null,
    "also": [
     {
      "source": "saramin",
@@ -137,6 +234,7 @@
    "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?rec_idx=50000001",
    "food": "직무",
    "detail": "식품가공·개발 · 식품연구,품질관리,HACCP",
+   "salary": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -163,7 +261,18 @@
    "url": "https://job.alio.go.kr/recruitview.do?idx=290003",
    "food": "직무",
    "detail": "보건.의료, 음식서비스",
-   "first_seen": "2026-11-19"
+   "quals": null,
+   "headcount": null,
+   "first_seen": "2026-11-19",
+   "salary": {
+    "kind": "public_start",
+    "amount": 3750,
+    "year": 2025,
+    "regular": false,
+    "type": "기타공공기관",
+    "avg_all": 3948,
+    "avg_type": null
+   }
   },
   {
    "id": "saramin:50000003",
@@ -190,6 +299,7 @@
    "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?rec_idx=50000003",
    "food": "직무",
    "detail": "식품가공·개발 · 인허가,RA",
+   "salary": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -215,7 +325,11 @@
    "deadline_note": null,
    "url": "https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190001",
    "food": "직무",
-   "detail": "기타 식품 제조업 · 연봉 3200만원 ~ 3600만원",
+   "detail": "기타 식품 제조업",
+   "salary": {
+    "kind": "posting",
+    "text": "연봉 3200만원 ~ 3600만원"
+   },
    "first_seen": "2026-11-19"
   },
   {
@@ -242,7 +356,18 @@
    "url": "https://job.alio.go.kr/recruitview.do?idx=290005",
    "food": "직무",
    "detail": "경영.회계.사무, 영업판매",
-   "first_seen": "2026-11-19"
+   "quals": null,
+   "headcount": null,
+   "first_seen": "2026-11-19",
+   "salary": {
+    "kind": "public_start",
+    "amount": 4030,
+    "year": 2025,
+    "regular": true,
+    "type": "준정부기관",
+    "avg_all": 3948,
+    "avg_type": null
+   }
   },
   {
    "id": "work24:K151612611190005",
@@ -268,6 +393,7 @@
    "url": "https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190005",
    "food": "직무",
    "detail": "건강기능식품 제조업",
+   "salary": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -295,6 +421,7 @@
    "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?rec_idx=50000006",
    "food": "직무",
    "detail": "식품가공·개발 · 생산관리,공정관리",
+   "salary": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -323,6 +450,8 @@
    "url": "https://job.alio.go.kr/recruitview.do?idx=290006",
    "food": "직무",
    "detail": "보건.의료",
+   "quals": null,
+   "headcount": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -348,7 +477,11 @@
    "deadline_note": "채용시까지",
    "url": "https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190002",
    "food": "직무",
-   "detail": "노인 요양 복지시설 운영업 · 월급 250만원",
+   "detail": "노인 요양 복지시설 운영업",
+   "salary": {
+    "kind": "posting",
+    "text": "월급 250만원"
+   },
    "first_seen": "2026-11-19"
   },
   {
@@ -375,6 +508,7 @@
    "url": "https://www.saramin.co.kr/zf_user/jobs/relay/view?rec_idx=50000002",
    "food": "직무",
    "detail": "급식·출장요리 · 영양사,조리사",
+   "salary": null,
    "first_seen": "2026-11-19"
   }
  ]
