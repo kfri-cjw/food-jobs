@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wantedRoot>
+  <total>5</total><startPage>1</startPage><display>100</display>
+  <wanted>
+    <wantedAuthNo>K151612611190001</wantedAuthNo><company>가람식품(주)(예시)</company><busino>0000000001</busino>
+    <indTpNm>기타 식품 제조업</indTpNm><title>[예시] 식품 품질관리(QC) 신입사원 모집</title>
+    <salTpNm>연봉</salTpNm><sal>3200만원 ~ 3600만원</sal><region>충북 음성군</region><holidayTpNm>주5일근무</holidayTpNm>
+    <minEdubg>대졸(4년)</minEdubg><career>신입</career><regDt>26-11-18</regDt><closeDt>26-12-05</closeDt>
+    <wantedInfoUrl>https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190001</wantedInfoUrl>
+    <empTpCd>10</empTpCd><jobsCd>023101</jobsCd>
+  </wanted>
+  <wanted>
+    <wantedAuthNo>K151612611190002</wantedAuthNo><company>푸른들요양원(예시)</company>
+    <indTpNm>노인 요양 복지시설 운영업</indTpNm><title>[예시] 요양원 영양사 구인 (주5일)</title>
+    <salTpNm>월급</salTpNm><sal>250만원</sal><region>전북 전주시 덕진구</region>
+    <minEdubg>대졸(2~3년)</minEdubg><career>관계없음</career><regDt>26-11-17</regDt><closeDt>채용시까지 26-12-17</closeDt>
+    <wantedInfoUrl>https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190002</wantedInfoUrl>
+    <empTpCd>20</empTpCd>
+  </wanted>
+  <wanted>
+    <wantedAuthNo>K151612611190003</wantedAuthNo><company>새벽물류(예시)</company>
+    <indTpNm>화물 운송업</indTpNm><title>[예시] 냉장 식품 배송기사 모집</title>
+    <region>경기 이천시</region><minEdubg>학력무관</minEdubg><career>관계없음</career><regDt>26-11-18</regDt><closeDt>26-12-01</closeDt>
+    <wantedInfoUrl>https://www.work24.go.kr/x</wantedInfoUrl><empTpCd>20</empTpCd>
+  </wanted>
+  <wanted>
+    <wantedAuthNo>K151612611190004</wantedAuthNo><company>한결F&amp;B(예시)</company>
+    <indTpNm>면류, 마카로니 및 유사 식품 제조업</indTpNm><title>[예시] 식품연구소 제품개발(면·소스) 연구원</title>
+    <region>경기 평택시</region><minEdubg>석사</minEdubg><career>경력</career><regDt>26-11-16</regDt><closeDt>26-11-30</closeDt>
+    <wantedInfoUrl>https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190004</wantedInfoUrl>
+    <empTpCd>10</empTpCd>
+  </wanted>
+  <wanted>
+    <wantedAuthNo>K151612611190005</wantedAuthNo><company>다온헬스(예시)</company>
+    <indTpNm>건강기능식품 제조업</indTpNm><title>[예시] 건강기능식품 인허가(RA) 담당자</title>
+    <region>서울 강서구</region><minEdubg>대졸(4년)</minEdubg><career>신입</career><regDt>26-11-19</regDt><closeDt>26-12-10</closeDt>
+    <wantedInfoUrl>https://www.work24.go.kr/wk/a/b/1500/empDetailAuthView.do?wantedAuthNo=K151612611190005</wantedInfoUrl>
+    <empTpCd>10</empTpCd>
+  </wanted>
+</wantedRoot>

@@ -1,0 +1,23 @@
+{"resultCode": 200, "resultMsg": "성공했습니다.", "totalCount": 7, "result": [
+ {"recrutPblntSn": 290001, "recrutPbancTtl": "[예시] 2026년 제2차 연구직(식품가공·발효) 신규채용", "instNm": "한국바이오식품연구원(예시)",
+  "ncsCdNmLst": "식품가공, 교육.자연.사회과학", "hireTypeNmLst": "정규직", "recrutSe": "R2030", "recrutSeNm": "신입+경력",
+  "workRgnNmLst": "전북", "acbgCondNmLst": "박사", "pbancBgngYmd": "20261110", "pbancEndYmd": "20261128", "ongoingYn": "Y", "replmprYn": "N"},
+ {"recrutPblntSn": 290002, "recrutPbancTtl": "[예시] 체험형 청년인턴(식품안전 분야) 모집", "instNm": "국가식품안전센터(예시)",
+  "ncsCdNmLst": "경영.회계.사무", "hireTypeNmLst": "청년인턴(체험형)", "recrutSe": "R2010", "recrutSeNm": "신입",
+  "workRgnNmLst": "충북", "acbgCondNmLst": "학력무관", "pbancBgngYmd": "20261115", "pbancEndYmd": "20261121", "ongoingYn": "Y", "replmprYn": "N"},
+ {"recrutPblntSn": 290003, "recrutPbancTtl": "[예시] 영양사(기간제) 채용 공고", "instNm": "국립중앙의료센터(예시)",
+  "ncsCdNmLst": "보건.의료, 음식서비스", "hireTypeNmLst": "비정규직", "recrutSe": "R2030", "recrutSeNm": "신입+경력",
+  "workRgnNmLst": "서울", "acbgCondNmLst": "대졸(4년)", "pbancBgngYmd": "20261117", "pbancEndYmd": "20261203", "ongoingYn": "Y", "replmprYn": "Y"},
+ {"recrutPblntSn": 290004, "recrutPbancTtl": "[예시] 2026년 하반기 신입사원 공개채용", "instNm": "한국전력기술(예시)",
+  "ncsCdNmLst": "전기.전자, 기계", "hireTypeNmLst": "정규직", "recrutSe": "R2010", "recrutSeNm": "신입",
+  "workRgnNmLst": "경북", "acbgCondNmLst": "학력무관", "pbancBgngYmd": "20261110", "pbancEndYmd": "20261130", "ongoingYn": "Y", "replmprYn": "N"},
+ {"recrutPblntSn": 290005, "recrutPbancTtl": "[예시] 농식품 수출지원 일반직 6급 채용", "instNm": "한국농식품유통진흥공사(예시)",
+  "ncsCdNmLst": "경영.회계.사무, 영업판매", "hireTypeNmLst": "정규직", "recrutSe": "R2010", "recrutSeNm": "신입",
+  "workRgnNmLst": "전남", "acbgCondNmLst": "학력무관", "pbancBgngYmd": "20261118", "pbancEndYmd": "20261209", "ongoingYn": "Y", "replmprYn": "N"},
+ {"recrutPblntSn": 290006, "recrutPbancTtl": "[예시] 무기계약직(학교급식 위생점검원) 채용", "instNm": "학교환경위생원(예시)",
+  "ncsCdNmLst": "보건.의료", "hireTypeNmLst": "무기계약직", "recrutSe": "R2020", "recrutSeNm": "경력",
+  "workRgnNmLst": "경기, 인천", "acbgCondNmLst": "대졸(4년)", "pbancBgngYmd": "20261101", "pbancEndYmd": "20261215", "ongoingYn": "Y", "replmprYn": "N"},
+ {"recrutPblntSn": 290007, "recrutPbancTtl": "[예시] 식품 분석 연구원(위촉) 채용 - 마감", "instNm": "한국바이오식품연구원(예시)",
+  "ncsCdNmLst": "식품가공", "hireTypeNmLst": "비정규직", "recrutSe": "R2020", "recrutSeNm": "경력",
+  "workRgnNmLst": "전북", "acbgCondNmLst": "석사", "pbancBgngYmd": "20261001", "pbancEndYmd": "20261015", "ongoingYn": "Y", "replmprYn": "N"}
+]}
