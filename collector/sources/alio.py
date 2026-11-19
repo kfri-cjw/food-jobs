@@ -107,6 +107,14 @@ def to_job(r: dict) -> dict | None:
     url = f"https://job.alio.go.kr/recruitview.do?idx={sn}" if sn.isdigit() else (
         _s(r.get("srcUrl")) or "https://job.alio.go.kr/recruit.do")
     region_text = _s(r.get("workRgnNmLst"))
+    qual_text = _s(r.get("aplyQlfcCn"))
+    pref_text = _s(r.get("prefCondCn") or r.get("prefCn"))
+    disq_text = _s(r.get("disqlfcRsn"))
+    quals = C.qualifications(qual_text, pref_text) if (qual_text or pref_text) else {}
+    if quals:
+        quals["text"] = qual_text[:900]
+        quals["pref"] = pref_text[:500]
+    nope = _s(r.get("recrutNope"))
     return {
         "id": f"{SOURCE}:{sn or title}",
         "source": SOURCE,
@@ -125,4 +133,6 @@ def to_job(r: dict) -> dict | None:
         "url": url,
         "food": "직무" if food_job else "기관",
         "detail": ncs,
+        "quals": quals or None,
+        "headcount": int(nope) if nope.isdigit() and int(nope) > 0 else None,
     }

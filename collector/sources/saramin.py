@@ -8,6 +8,7 @@ from __future__ import annotations
 import html
 
 from .. import classify as C
+from .. import salary as S
 from .. import config
 from ..http import SourceError, get
 
@@ -93,4 +94,5 @@ def to_job(r: dict) -> dict | None:
         "url": r.get("url") or "https://www.saramin.co.kr",
         "food": "직무",
         "detail": " · ".join(x for x in (industry, codes[:60]) if x),
+        "salary": S.posting_salary(_name(r.get("salary"))),
     }

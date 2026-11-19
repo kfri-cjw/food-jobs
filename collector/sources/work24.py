@@ -8,6 +8,7 @@ from __future__ import annotations
 import xml.etree.ElementTree as ET
 
 from .. import classify as C
+from .. import salary as S
 from .. import config
 from ..http import SourceError, get
 
@@ -90,5 +91,6 @@ def to_job(r: dict) -> dict | None:
         "deadline_note": note,
         "url": r.get("wantedInfoUrl") or r.get("wantedMobileInfoUrl") or "https://www.work24.go.kr",
         "food": "직무",
-        "detail": " · ".join(x for x in (ind, sal) if x),
+        "detail": ind,
+        "salary": S.posting_salary(sal),
     }
