@@ -1,0 +1,54 @@
+{
+ "note": "이 파일을 고치면 '기업·기관 바로가기' 탭이 바뀝니다. url이 없으면 사람인·잡코리아 검색 링크만 보입니다.",
+ "groups": [
+  {"title": "채용 포털", "desc": "공공기관·공무원·민간 공고를 직접 검색할 때",
+   "items": [
+    {"name": "잡알리오", "desc": "공공기관 채용정보 공식 사이트 (재정경제부 운영)", "url": "https://job.alio.go.kr"},
+    {"name": "나라일터", "desc": "중앙부처·지자체·교육청 채용 (식약처·농진청·영양사 공무직 등)", "url": "https://www.gojobs.go.kr"},
+    {"name": "고용24", "desc": "고용노동부 통합 채용포털 (옛 워크넷)", "url": "https://www.work24.go.kr"},
+    {"name": "대한영양사협회", "desc": "영양사 구인구직 게시판", "url": "https://www.dietitian.or.kr"},
+    {"name": "사람인", "desc": "민간 채용 포털", "url": "https://www.saramin.co.kr"},
+    {"name": "잡코리아", "desc": "민간 채용 포털", "url": "https://www.jobkorea.co.kr"},
+    {"name": "캐치", "desc": "대기업·공채 일정 모아보기", "url": "https://www.catch.co.kr"}
+   ]},
+  {"title": "식품 관련 공공·연구기관", "desc": "대부분 잡알리오·나라일터에도 올라오지만, 기관 홈페이지 '채용' 게시판이 가장 빠릅니다",
+   "items": [
+    {"name": "식품의약품안전처", "url": "https://www.mfds.go.kr"},
+    {"name": "농촌진흥청", "url": "https://www.rda.go.kr"},
+    {"name": "한국식품연구원", "url": "https://www.kfri.re.kr"},
+    {"name": "세계김치연구소", "url": "https://www.wikim.re.kr"},
+    {"name": "한국농수산식품유통공사(aT)", "url": "https://www.at.or.kr"},
+    {"name": "한국식품안전관리인증원(HACCP)", "url": "https://www.haccp.or.kr"},
+    {"name": "식품안전정보원", "url": "https://www.foodinfo.or.kr"},
+    {"name": "한국식품산업클러스터진흥원", "url": "https://www.foodpolis.kr"},
+    {"name": "한국보건산업진흥원", "url": "https://www.khidi.or.kr"},
+    {"name": "농림식품기술기획평가원", "url": "https://www.ipet.re.kr"},
+    {"name": "축산물품질평가원", "url": "https://www.ekape.or.kr"}
+   ]},
+  {"title": "주요 식품기업", "desc": "공채 시즌(3~4월, 9~10월)에는 그룹 채용 홈페이지를 직접 확인하세요",
+   "items": [
+    {"name": "CJ그룹", "desc": "CJ제일제당·CJ프레시웨이·CJ푸드빌", "url": "https://recruit.cj.net", "search": "CJ제일제당"},
+    {"name": "농심그룹", "desc": "농심·농심태경", "url": "https://recruit.nongshim.com", "search": "농심"},
+    {"name": "오뚜기", "url": "https://www.otoki.com/about/recruitment", "search": "오뚜기"},
+    {"name": "롯데그룹", "desc": "롯데웰푸드·롯데칠성음료·롯데GRS", "url": "https://recruit.lotte.co.kr", "search": "롯데웰푸드"},
+    {"name": "풀무원", "url": "https://pulmuone.career.greetinghr.com/ko/apply", "search": "풀무원"},
+    {"name": "삼성웰스토리", "desc": "단체급식·식자재 (삼성 채용 홈페이지)", "url": "https://www.samsungcareers.com", "search": "삼성웰스토리"},
+    {"name": "신세계푸드", "desc": "신세계그룹 채용 홈페이지", "url": "https://job.shinsegae.com", "search": "신세계푸드"},
+    {"name": "대상", "desc": "청정원·종가", "search": "대상주식회사"},
+    {"name": "오리온", "search": "오리온"},
+    {"name": "SPC그룹", "desc": "파리크라상·SPC삼립·비알코리아", "search": "SPC"},
+    {"name": "동원F&B", "search": "동원F&B"},
+    {"name": "매일유업", "search": "매일유업"},
+    {"name": "빙그레", "search": "빙그레"},
+    {"name": "아워홈", "desc": "단체급식·식품제조", "search": "아워홈"},
+    {"name": "현대그린푸드", "desc": "단체급식·식자재", "search": "현대그린푸드"},
+    {"name": "CJ프레시웨이", "desc": "단체급식·식자재", "search": "CJ프레시웨이"},
+    {"name": "hy", "desc": "옛 한국야쿠르트", "search": "에치와이"},
+    {"name": "삼양식품", "search": "삼양식품"},
+    {"name": "하림", "search": "하림"},
+    {"name": "동서식품", "search": "동서식품"},
+    {"name": "남양유업", "search": "남양유업"},
+    {"name": "정관장(KGC인삼공사)", "search": "한국인삼공사"}
+   ]}
+ ]
+}

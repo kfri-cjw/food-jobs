@@ -1,0 +1,27 @@
+{
+ "updated_at": "2026-11-19 09:42",
+ "today": "2026-11-19",
+ "sources": {
+  "alio": {
+   "label": "잡알리오(공공기관)",
+   "state": "no_key",
+   "count": 0,
+   "message": "DATA_GO_KR_KEY 미설정 — 건너뜀"
+  },
+  "work24": {
+   "label": "고용24",
+   "state": "no_key",
+   "count": 0,
+   "message": "WORK24_KEY 미설정 — 건너뜀"
+  },
+  "saramin": {
+   "label": "사람인",
+   "state": "no_key",
+   "count": 0,
+   "message": "SARAMIN_KEY 미설정 — 건너뜀"
+  }
+ },
+ "total": 0,
+ "new_today": 0,
+ "jobs": []
+}
