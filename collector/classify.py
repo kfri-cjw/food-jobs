@@ -42,8 +42,12 @@ def _join(*parts) -> str:
 
 
 # ── 식품 관련성 ───────────────────────────────────────────
+# '위생사'가 들어가도 식품과 무관한 직종
+_NON_FOOD_JOBS = re.compile(r"치과\s*위생사|산업\s*위생사")
+
+
 def is_food_job(*texts) -> bool:
-    return contains_any(_join(*texts), config.FOOD_KEYWORDS)
+    return contains_any(_NON_FOOD_JOBS.sub(" ", _join(*texts)), config.FOOD_KEYWORDS)
 
 
 def is_food_institution(org: str) -> bool:
@@ -52,6 +56,13 @@ def is_food_institution(org: str) -> bool:
 
 def is_noise(title: str) -> bool:
     return contains_any(title or "", config.NOISE_KEYWORDS)
+
+
+def is_public_noise(title: str) -> bool:
+    """공공기관 공고 중 청소·경비 등 비전공 직무이거나 보훈·장애인 제한경쟁인 것."""
+    t = title or ""
+    return contains_any(t, config.PUBLIC_NOISE_KEYWORDS) or any(
+        re.search(p, t) for p in config.RESTRICTED_PATTERNS)
 
 
 # ── 기관 유형 ────────────────────────────────────────────
