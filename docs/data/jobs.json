@@ -1,12 +1,13 @@
 {
- "updated_at": "2026-11-19 09:42",
+ "updated_at": "2026-11-19 10:36",
  "today": "2026-11-19",
  "sources": {
   "alio": {
    "label": "잡알리오(공공기관)",
-   "state": "no_key",
-   "count": 0,
-   "message": "DATA_GO_KR_KEY 미설정 — 건너뜀"
+   "state": "ok",
+   "raw": 540,
+   "count": 33,
+   "message": null
   },
   "work24": {
    "label": "고용24",
@@ -21,7 +22,864 @@
    "message": "SARAMIN_KEY 미설정 — 건너뜀"
   }
  },
- "total": 0,
- "new_today": 0,
- "jobs": []
+ "total": 32,
+ "new_today": 32,
+ "jobs": [
+  {
+   "id": "alio:306729",
+   "source": "alio",
+   "title": "한국해양수산연수원 2026년도 제4차 계약직 직원 채용 공고",
+   "org": "한국해양수산연수원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리",
+    "행정·사무"
+   ],
+   "emp": [
+    "인턴",
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관,대졸(2~3년),대졸(4년)",
+   "regions": [
+    "부산",
+    "인천",
+    "전남"
+   ],
+   "region_text": "부산,인천,전남광주",
+   "posted": "2026-11-05",
+   "deadline": "2026-11-19",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306729",
+   "food": "직무",
+   "detail": "사업관리,경영.회계.사무,교육.자연.사회과학,음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306667",
+   "source": "alio",
+   "title": "한국농어촌공사 철원화천지사 공무직(청소원) 보훈ㆍ장애인 제한경쟁 채용 공고",
+   "org": "한국농어촌공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "강원"
+   ],
+   "region_text": "강원",
+   "posted": "2026-11-04",
+   "deadline": "2026-11-19",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306667",
+   "food": "기관",
+   "detail": "경비.청소",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306663",
+   "source": "alio",
+   "title": "한국농어촌공사 청주지사 공무직(청소원) 보훈·장애인 제한경쟁 채용공고",
+   "org": "한국농어촌공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "충북"
+   ],
+   "region_text": "충북",
+   "posted": "2026-11-04",
+   "deadline": "2026-11-19",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306663",
+   "food": "기관",
+   "detail": "경비.청소",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306980",
+   "source": "alio",
+   "title": "한국폴리텍대학 남대구캠퍼스 업무직(대학운영직_조리사) 채용(3차) 공고",
+   "org": "학교법인한국폴리텍",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "대구"
+   ],
+   "region_text": "대구",
+   "posted": "2026-11-13",
+   "deadline": "2026-11-20",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306980",
+   "food": "직무",
+   "detail": "음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306739",
+   "source": "alio",
+   "title": "축산환경관리원 2026년 제5회 직원(기간제 근로자) 채용 공고",
+   "org": "(재)축산환경관리원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "행정·사무"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입",
+   "edu": "학력무관,고졸,대졸(2~3년)",
+   "regions": [
+    "세종"
+   ],
+   "region_text": "세종",
+   "posted": "2026-11-05",
+   "deadline": "2026-11-20",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306739",
+   "food": "기관",
+   "detail": "경영.회계.사무,운전.운송,화학,농림어업",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306720",
+   "source": "alio",
+   "title": "한국농어촌공사 영산강사업단 공무직(청소원) 보훈·장애인 제한경쟁 채용공고",
+   "org": "한국농어촌공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "전남"
+   ],
+   "region_text": "전남광주",
+   "posted": "2026-11-05",
+   "deadline": "2026-11-20",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306720",
+   "food": "기관",
+   "detail": "경비.청소",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307080",
+   "source": "alio",
+   "title": "한국폴리텍 다솜고등학교 업무직(대학운영직_조리사)채용 공고",
+   "org": "학교법인한국폴리텍",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "충북"
+   ],
+   "region_text": "충북",
+   "posted": "2026-11-16",
+   "deadline": "2026-11-23",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307080",
+   "food": "직무",
+   "detail": "음식서비스",
+   "also": [],
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307119",
+   "source": "alio",
+   "title": "[순천병원] 기간제(산업위생사) 채용 공고",
+   "org": "근로복지공단",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "품질·식품안전"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입",
+   "edu": "학력무관",
+   "regions": [
+    "전남"
+   ],
+   "region_text": "전남광주",
+   "posted": "2026-11-17",
+   "deadline": "2026-11-24",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307119",
+   "food": "직무",
+   "detail": "보건.의료",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306871",
+   "source": "alio",
+   "title": "한국농어촌공사 김해양산부산지사 및 의령지사 공무직(청소원) 보훈·장애인 제한경쟁채용 공고",
+   "org": "한국농어촌공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "경남"
+   ],
+   "region_text": "경남",
+   "posted": "2026-11-10",
+   "deadline": "2026-11-24",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306871",
+   "food": "기관",
+   "detail": "경비.청소",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306865",
+   "source": "alio",
+   "title": "한국농어촌공사 제주지역본부 공무직(청소원) 보훈ㆍ장애인 제한경쟁 채용 공고",
+   "org": "한국농어촌공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "제주"
+   ],
+   "region_text": "제주",
+   "posted": "2026-11-10",
+   "deadline": "2026-11-24",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306865",
+   "food": "기관",
+   "detail": "경비.청소",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307108",
+   "source": "alio",
+   "title": "한국폴리텍대학 광명융합기술교육원 대학운영직(조리사) 채용 공고",
+   "org": "학교법인한국폴리텍",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "경기"
+   ],
+   "region_text": "경기",
+   "posted": "2026-11-18",
+   "deadline": "2026-11-25",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307108",
+   "food": "직무",
+   "detail": "음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306909",
+   "source": "alio",
+   "title": "한국농촌경제연구원 2026-14차 계약직 채용 공고",
+   "org": "한국농촌경제연구원",
+   "org_type": "정부출연·연구기관",
+   "jobs": [
+    "R&D·제품개발"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "석사,박사",
+   "regions": [
+    "전남"
+   ],
+   "region_text": "전남광주",
+   "posted": "2026-11-11",
+   "deadline": "2026-11-25",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306909",
+   "food": "기관",
+   "detail": "연구",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306907",
+   "source": "alio",
+   "title": "2026년 제6차 기간제(치과교정과, 치과보철과 치과위생사) 채용 공고",
+   "org": "경북대학교치과병원",
+   "org_type": "병원·학교·복지기관",
+   "jobs": [
+    "품질·식품안전"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입",
+   "edu": "학력무관",
+   "regions": [
+    "대구"
+   ],
+   "region_text": "대구",
+   "posted": "2026-11-11",
+   "deadline": "2026-11-25",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306907",
+   "food": "직무",
+   "detail": "보건.의료",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306864",
+   "source": "alio",
+   "title": "인천적십자병원 비정규직 치과위생사 채용공고",
+   "org": "대한적십자사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "품질·식품안전"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입",
+   "edu": "학력무관",
+   "regions": [
+    "인천"
+   ],
+   "region_text": "인천",
+   "posted": "2026-11-09",
+   "deadline": "2026-11-25",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306864",
+   "food": "직무",
+   "detail": "보건.의료",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307140",
+   "source": "alio",
+   "title": "한국폴리텍대학 영남융합기술캠퍼스 업무직(대학운영직_조리원) 채용 공고",
+   "org": "학교법인한국폴리텍",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "대구"
+   ],
+   "region_text": "대구",
+   "posted": "2026-11-17",
+   "deadline": "2026-11-26",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307140",
+   "food": "직무",
+   "detail": "음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306950",
+   "source": "alio",
+   "title": "제2026-4호 국립중앙청소년디딤센터 직원(공무직, 기간제(휴직대체)) 모집",
+   "org": "한국청소년상담복지개발원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리"
+   ],
+   "emp": [
+    "무기계약직",
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "경기"
+   ],
+   "region_text": "경기",
+   "posted": "2026-11-12",
+   "deadline": "2026-11-26",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306950",
+   "food": "직무",
+   "detail": "경영.회계.사무,사회복지.종교,운전.운송,경비.청소,음식서비스,전기.전자",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306928",
+   "source": "alio",
+   "title": "한국한의약진흥원 2026년도 제2차 개방형직위 채용 공고",
+   "org": "한국한의약진흥원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "기타"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "경력",
+   "edu": "고졸,대졸(2~3년),대졸(4년),석사,박사",
+   "regions": [
+    "전남"
+   ],
+   "region_text": "전남광주",
+   "posted": "2026-11-11",
+   "deadline": "2026-11-26",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306928",
+   "food": "기관",
+   "detail": "사업관리,보건.의료,연구",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306913",
+   "source": "alio",
+   "title": "[제27-01-01호 및 제27-02-01호]한국해양과학기술원 2027년 1차 직원(정규직/무기계약직) 채용",
+   "org": "한국해양과학기술원",
+   "org_type": "정부출연·연구기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "정규직",
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관,고졸,대졸(2~3년),대졸(4년),석사,박사",
+   "regions": [
+    "부산",
+    "경북",
+    "경남",
+    "제주"
+   ],
+   "region_text": "부산,경북,경남,제주",
+   "posted": "2026-11-11",
+   "deadline": "2026-11-26",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306913",
+   "food": "직무",
+   "detail": "사업관리,운전.운송,경비.청소,음식서비스,정보통신,환경.에너지.안전",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307027",
+   "source": "alio",
+   "title": "식품안전정보원 2026년 제3차 기간제 직원 채용",
+   "org": "식품안전정보원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "품질·식품안전"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관,고졸,대졸(2~3년),대졸(4년),석사,박사",
+   "regions": [
+    "서울"
+   ],
+   "region_text": "서울",
+   "posted": "2026-11-13",
+   "deadline": "2026-11-27",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307027",
+   "food": "직무",
+   "detail": "사업관리,경영.회계.사무,정보통신,식품가공,연구",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306995",
+   "source": "alio",
+   "title": "한국건강증진개발원 2026년 개방형직위(전략경영본부장) 공모",
+   "org": "한국건강증진개발원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "행정·사무"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "경력",
+   "edu": "대졸(4년),석사,박사",
+   "regions": [
+    "서울"
+   ],
+   "region_text": "서울",
+   "posted": "2026-11-13",
+   "deadline": "2026-11-27",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306995",
+   "food": "기관",
+   "detail": "경영.회계.사무,정보통신,환경.에너지.안전",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306954",
+   "source": "alio",
+   "title": "2026년도 계약직 채용 공고",
+   "org": "농림식품기술기획평가원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "행정·사무"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입",
+   "edu": "학력무관",
+   "regions": [
+    "전남"
+   ],
+   "region_text": "전남광주",
+   "posted": "2026-11-12",
+   "deadline": "2026-11-27",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306954",
+   "food": "기관",
+   "detail": "사업관리,경영.회계.사무",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306897",
+   "source": "alio",
+   "title": "2026년 한국농업기술진흥원 제1차 전문계약직 채용(제한경쟁) 공고",
+   "org": "한국농업기술진흥원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "행정·사무"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "박사",
+   "regions": [
+    "전북"
+   ],
+   "region_text": "전북",
+   "posted": "2026-11-12",
+   "deadline": "2026-11-27",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306897",
+   "food": "기관",
+   "detail": "사업관리,경영.회계.사무",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307083",
+   "source": "alio",
+   "title": "[인천보훈병원] 업무지원직(진료지원, 급식) 공개 채용",
+   "org": "한국보훈복지의료공단",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "무기계약직",
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "인천"
+   ],
+   "region_text": "인천",
+   "posted": "2026-11-16",
+   "deadline": "2026-11-30",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307083",
+   "food": "직무",
+   "detail": "보건.의료",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307072",
+   "source": "alio",
+   "title": "한국스포츠과학원 조리원(지원직) 채용 공고",
+   "org": "서울올림픽기념국민체육진흥공단",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "서울"
+   ],
+   "region_text": "서울",
+   "posted": "2026-11-16",
+   "deadline": "2026-11-30",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307072",
+   "food": "직무",
+   "detail": "음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306972",
+   "source": "alio",
+   "title": "2027년 상반기 정규직(보건직-치과위생사) 모집공고",
+   "org": "국민건강보험공단 일산병원",
+   "org_type": "병원·학교·복지기관",
+   "jobs": [
+    "품질·식품안전"
+   ],
+   "emp": [
+    "정규직"
+   ],
+   "career": "경력",
+   "edu": "학력무관",
+   "regions": [
+    "경기"
+   ],
+   "region_text": "경기",
+   "posted": "2026-11-17",
+   "deadline": "2026-12-01",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306972",
+   "food": "직무",
+   "detail": "보건.의료",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307081",
+   "source": "alio",
+   "title": "부산항만공사 기간제 직원(장애인 바리스타) 채용 공고",
+   "org": "부산항만공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입",
+   "edu": "학력무관",
+   "regions": [
+    "부산"
+   ],
+   "region_text": "부산",
+   "posted": "2026-11-16",
+   "deadline": "2026-12-01",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307081",
+   "food": "직무",
+   "detail": "음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306990",
+   "source": "alio",
+   "title": "국방과학연구소 '27년 상반기 임용 공개채용",
+   "org": "국방과학연구소",
+   "org_type": "정부출연·연구기관",
+   "jobs": [
+    "R&D·제품개발"
+   ],
+   "emp": [
+    "정규직",
+    "무기계약직",
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관,고졸,대졸(4년),석사,박사",
+   "regions": [
+    "서울",
+    "대전",
+    "세종",
+    "강원",
+    "충남",
+    "경남"
+   ],
+   "region_text": "서울,대전,세종,강원,충남,경남",
+   "posted": "2026-11-18",
+   "deadline": "2026-12-02",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306990",
+   "food": "직무",
+   "detail": "사업관리,경영.회계.사무,법률.경찰.소방.교도.국방,경비.청소,음식서비스,건설,기계,재료,화학,전기.전자,정보통신,환경.에너지.안전,연구",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:306970",
+   "source": "alio",
+   "title": "2027년 한국농업기술진흥원 상반기 체험형 청년인턴 채용 공고",
+   "org": "한국농업기술진흥원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "행정·사무"
+   ],
+   "emp": [
+    "인턴"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "대구",
+    "전북"
+   ],
+   "region_text": "대구,전북",
+   "posted": "2026-11-18",
+   "deadline": "2026-12-02",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=306970",
+   "food": "기관",
+   "detail": "사업관리,경영.회계.사무,기계,농림어업",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307132",
+   "source": "alio",
+   "title": "2026년 제3차 한국청소년활동진흥원 직원(일반직, 공무직) 채용 공고",
+   "org": "한국청소년활동진흥원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리",
+    "행정·사무"
+   ],
+   "emp": [
+    "정규직",
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "강원",
+    "충남",
+    "전북",
+    "경북"
+   ],
+   "region_text": "강원,충남,전북,경북",
+   "posted": "2026-11-17",
+   "deadline": "2026-12-02",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307132",
+   "food": "직무",
+   "detail": "경영.회계.사무,이용.숙박.여행.오락.스포츠,음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307039",
+   "source": "alio",
+   "title": "한국서부발전(주) 군산발전본부 후생담당원(기간제근로자) 모집공고",
+   "org": "한국서부발전(주)",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "전북"
+   ],
+   "region_text": "전북",
+   "posted": "2026-11-17",
+   "deadline": "2026-12-02",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307039",
+   "food": "직무",
+   "detail": "음식서비스",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307175",
+   "source": "alio",
+   "title": "한국농어촌공사 천안지사, 부여지사, 서천지사, 청양지사 공무직(청소원) 보훈·장애인 제한경쟁채용공고",
+   "org": "한국농어촌공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "생산·공정관리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "충남"
+   ],
+   "region_text": "충남",
+   "posted": "2026-11-18",
+   "deadline": "2026-12-03",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307175",
+   "food": "기관",
+   "detail": "경비.청소",
+   "first_seen": "2026-11-19"
+  },
+  {
+   "id": "alio:307098",
+   "source": "alio",
+   "title": "한국농어촌공사 새만금사업단 계약직(육아휴직 대체인력) 채용 공고",
+   "org": "한국농어촌공사",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "기타"
+   ],
+   "emp": [
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "전북"
+   ],
+   "region_text": "전북",
+   "posted": "2026-11-17",
+   "deadline": "2026-12-03",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307098",
+   "food": "기관",
+   "detail": "사업관리,농림어업",
+   "first_seen": "2026-11-19"
+  }
+ ]
 }
