@@ -30,7 +30,10 @@ def test_attach_public_start():
     assert n == 3
     a, b, c, d = jobs
     # 작년(2025) 값을 우선 사용, 천원 → 만원
-    assert a["salary"] == {"kind": "public_start", "amount": 3837, "year": 2025, "regular": False}
+    assert {k: a["salary"][k] for k in ("kind", "amount", "year", "regular", "type")} == \
+        {"kind": "public_start", "amount": 3837, "year": 2025, "regular": False, "type": "기타공공기관"}
+    # 비교 기준: 공시 기관 단순평균 (예시 표 2곳: 38369, 39016천원 → 3869만원)
+    assert a["salary"]["avg_all"] == 3869
     assert b["salary"]["amount"] == 3902 and b["salary"]["regular"] is True
     assert "salary" not in c
     assert d["salary"]["kind"] == "posting"
@@ -58,3 +61,11 @@ def test_refresh_keeps_old_on_failure(tmp_path):
     st = S.refresh_public(date(2026, 12, 30), p, fetch=lambda y: 1 / 0)
     assert st["state"] == "error" and st["count"] > 0
     assert json.loads(p.read_text(encoding="utf-8"))["updated"] == "2026-11-19"
+
+
+def test_averages_by_type():
+    items = {f"공사{i}": {"type": "공기업(시장형)", "by_year": {"2025": 50000}} for i in range(5)}
+    items |= {f"재단{i}": {"type": "기타공공기관", "by_year": {"2025": 30000}} for i in range(5)}
+    avg = S.averages({"items": items}, date(2026, 11, 19))
+    assert avg["all"] == 4000 and avg["n"] == 10 and avg["year"] == 2025
+    assert avg["by_type"] == {"공기업": 5000, "기타공공기관": 3000}

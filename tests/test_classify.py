@@ -101,3 +101,18 @@ def test_gongmujik_is_not_production():
 
 def test_rural_corp_not_food_institution():
     assert not C.is_food_institution("한국농어촌공사")
+
+
+def test_qualifications():
+    q = C.qualifications(
+        "식품공학 또는 식품영양학 관련 학과 졸업자, 식품기사 자격증 소지자, TOEIC 700점 이상, "
+        "본사 이전지역 인재(전북 소재 학교 졸업자) 우대",
+        "영양사 면허 소지자 우대, HACCP 팀장 교육 이수자 우대, 1종 보통 운전면허")
+    assert "식품기사" in q["certs"] and "영양사 면허" in q["certs"]
+    assert "HACCP 교육" in q["certs"] and "운전면허" in q["certs"]
+    assert q["langs"] == ["TOEIC 700"]
+    assert "식품공학" in q["majors"]
+    assert "지역 제한" in q["limits"]
+    # 치과위생사는 위생사 자격으로 보지 않음
+    assert "위생사" not in C.qualifications("치과위생사 면허 소지자")["certs"]
+    assert C.qualifications("") == {}

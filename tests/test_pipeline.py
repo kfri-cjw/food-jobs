@@ -38,6 +38,8 @@ def test_collect_filters_and_classifies(run):
     r = by_title(data, "연구직(식품가공")
     assert r["org_type"] == "정부출연·연구기관" and r["jobs"][0] == "R&D·제품개발"
     assert r["url"] == "https://job.alio.go.kr/recruitview.do?idx=290001"
+    assert r["quals"]["certs"] == ["식품기사"] and r["quals"]["langs"] == ["TOEIC 800"]
+    assert r["headcount"] == 2
 
     r = by_title(data, "영양사(기간제)")
     assert "계약직" in r["emp"] and r["jobs"] == ["영양사·급식·조리"]
