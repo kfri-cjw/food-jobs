@@ -74,3 +74,30 @@ def test_food_and_noise():
     assert not C.is_food_job("인적 리소스 관리")
     assert C.is_noise("냉장 식품 배송기사 모집")
     assert not C.is_noise("식품 품질관리 신입")
+
+
+def test_public_noise():
+    # 청소·경비 직무와 보훈·장애인 제한경쟁은 제외
+    assert C.is_public_noise("한국농어촌공사 청주지사 공무직(청소원) 보훈·장애인 제한경쟁 채용공고")
+    assert C.is_public_noise("한국농어촌공사 철원화천지사 공무직(청소원) 보훈ㆍ장애인 제한경쟁 채용 공고")
+    assert C.is_public_noise("부산항만공사 기간제 직원(장애인 바리스타) 채용 공고")
+    assert C.is_public_noise("OO공단 보훈 제한경쟁 채용")
+    # '청소년' 기관·일반 조리직은 남겨야 함
+    assert not C.is_public_noise("2026년 제3차 한국청소년활동진흥원 직원(일반직, 공무직) 채용 공고")
+    assert not C.is_public_noise("한국폴리텍대학 남대구캠퍼스 업무직(대학운영직_조리사) 채용(3차) 공고")
+    assert not C.is_public_noise("식품안전정보원 2026년 제3차 기간제 직원 채용")
+
+
+def test_non_food_hygienist():
+    assert not C.is_food_job("인천적십자병원 비정규직 치과위생사 채용공고")
+    assert not C.is_food_job("[순천병원] 기간제(산업위생사) 채용 공고")
+    assert C.is_food_job("식품위생 담당 채용")
+
+
+def test_gongmujik_is_not_production():
+    assert "생산·공정관리" not in C.job_categories("OO공사 공무직(조리원) 채용")
+    assert "생산·공정관리" in C.job_categories("공장 공무팀 설비 담당")
+
+
+def test_rural_corp_not_food_institution():
+    assert not C.is_food_institution("한국농어촌공사")
