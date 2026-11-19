@@ -1,0 +1,135 @@
+"""수집 실행: python -m collector.main
+
+환경변수(없는 소스는 건너뜀)
+  DATA_GO_KR_KEY  공공데이터포털 일반 인증키(Decoding)  → 잡알리오(공공기관)
+  WORK24_KEY      고용24 OPEN-API 인증키                 → 민간 전반
+  SARAMIN_KEY     사람인 OPEN API access-key             → 대기업·식품기업
+"""
+from __future__ import annotations
+
+import json
+import os
+import re
+import sys
+from datetime import datetime, timedelta
+from pathlib import Path
+
+from . import classify as C
+from .http import mask
+from .sources import alio, saramin, work24
+
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "docs" / "data" / "jobs.json"
+
+SOURCES = [
+    # (이름, 환경변수, 모듈, 화면 표시명)
+    ("alio", "DATA_GO_KR_KEY", alio, "잡알리오(공공기관)"),
+    ("work24", "WORK24_KEY", work24, "고용24"),
+    ("saramin", "SARAMIN_KEY", saramin, "사람인"),
+]
+
+
+def _norm(s: str) -> str:
+    s = re.sub(r"\(주\)|㈜|주식회사|\(재\)|재단법인|\[[^\]]*\]|\([^)]*\)", "", s or "")
+    return re.sub(r"[\s\W_]+", "", s).lower()
+
+
+def load_previous(path: Path) -> dict:
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def collect(out_path: Path = OUT, env=None) -> dict:
+    env = os.environ if env is None else env
+    today = C.today_kst()
+    prev = load_previous(out_path)
+    prev_jobs = prev.get("jobs", [])
+    prev_by_id = {j["id"]: j for j in prev_jobs}
+
+    status, jobs = {}, []
+    for name, env_name, mod, label in SOURCES:
+        key = (env.get(env_name) or "").strip()
+        if not key:
+            status[name] = {"label": label, "state": "no_key", "count": 0,
+                            "message": f"{env_name} 미설정 — 건너뜀"}
+            continue
+        try:
+            raw = mod.fetch(key)
+            items = [j for j in (mod.to_job(r) for r in raw) if j]
+            status[name] = {"label": label, "state": "ok", "raw": len(raw), "count": len(items),
+                            "message": None}
+        except Exception as e:  # 한 소스가 실패해도 나머지는 계속
+            msg = mask(str(e), key)
+            items = [j for j in prev_jobs if j.get("source") == name]
+            status[name] = {"label": label, "state": "error", "count": len(items),
+                            "message": f"{msg[:300]} (이전 데이터 {len(items)}건 유지)"}
+            print(f"[경고] {label}: {msg}", file=sys.stderr)
+        jobs.extend(items)
+
+    # 같은 공고가 여러 곳에 올라온 경우 하나로 (먼저 나온 소스 우선)
+    merged: dict[str, dict] = {}
+    for j in jobs:
+        k = _norm(j["org"]) + "|" + _norm(j["title"])
+        if k in merged:
+            alt = merged[k].setdefault("also", [])
+            if j["source"] != merged[k]["source"] and j["source"] not in [a["source"] for a in alt]:
+                alt.append({"source": j["source"], "url": j["url"]})
+            continue
+        merged[k] = j
+
+    today_s = today.isoformat()
+    result = []
+    for j in merged.values():
+        if j.get("deadline") and j["deadline"] < today_s:
+            continue  # 마감 지난 공고 제거
+        j["first_seen"] = prev_by_id.get(j["id"], {}).get("first_seen") or today_s
+        result.append(j)
+
+    result.sort(key=lambda j: (j.get("deadline") or "9999-99-99", -(int((j.get("posted") or "0").replace("-", "") or 0))))
+    new_today = sum(1 for j in result if j["first_seen"] == today_s)
+    data = {
+        "updated_at": datetime.now(C.KST).strftime("%Y-%m-%d %H:%M"),
+        "today": today_s,
+        "sources": status,
+        "total": len(result),
+        "new_today": new_today,
+        "jobs": result,
+    }
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    return data
+
+
+def _summary(data: dict) -> str:
+    lines = [f"## 식품 채용공고 수집 결과 ({data['updated_at']} KST)", "",
+             f"- 전체 {data['total']}건 · 오늘 새로 들어온 공고 {data['new_today']}건", "",
+             "| 소스 | 상태 | 건수 | 메모 |", "|---|---|---|---|"]
+    icon = {"ok": "✅", "error": "⚠️", "no_key": "⏸️"}
+    for s in data["sources"].values():
+        lines.append(f"| {s['label']} | {icon.get(s['state'], s['state'])} | {s['count']} | {s.get('message') or ''} |")
+    soon = [j for j in data["jobs"] if j.get("deadline") and
+            j["deadline"] <= (datetime.fromisoformat(data["today"]) + timedelta(days=3)).date().isoformat()]
+    if soon:
+        lines += ["", f"### 3일 안에 마감 ({len(soon)}건)"]
+        lines += [f"- {j['deadline']} · {j['org']} — {j['title']}" for j in soon[:15]]
+    return "\n".join(lines)
+
+
+def main() -> int:
+    data = collect()
+    text = _summary(data)
+    print(text)
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+            f.write(text + "\n")
+    ok = any(s["state"] == "ok" for s in data["sources"].values())
+    keys = any(s["state"] != "no_key" for s in data["sources"].values())
+    if not keys:
+        print("[안내] 인증키가 하나도 설정되지 않았습니다. README의 '인증키 등록'을 참고하세요.", file=sys.stderr)
+    return 0 if ok or not keys else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
