@@ -15,6 +15,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 from . import classify as C
+from . import salary as S
 from .http import mask
 from .sources import alio, saramin, work24
 
@@ -41,7 +42,7 @@ def load_previous(path: Path) -> dict:
         return {}
 
 
-def collect(out_path: Path = OUT, env=None) -> dict:
+def collect(out_path: Path = OUT, env=None, salary_path: Path | None = None) -> dict:
     env = os.environ if env is None else env
     today = C.today_kst()
     prev = load_previous(out_path)
@@ -60,6 +61,8 @@ def collect(out_path: Path = OUT, env=None) -> dict:
             items = [j for j in (mod.to_job(r) for r in raw) if j]
             status[name] = {"label": label, "state": "ok", "raw": len(raw), "count": len(items),
                             "message": None}
+            if raw and isinstance(raw[0], dict):
+                status[name]["fields"] = sorted(raw[0].keys())[:60]
         except Exception as e:  # 한 소스가 실패해도 나머지는 계속
             msg = mask(str(e), key)
             items = [j for j in prev_jobs if j.get("source") == name]
@@ -87,6 +90,9 @@ def collect(out_path: Path = OUT, env=None) -> dict:
         j["first_seen"] = prev_by_id.get(j["id"], {}).get("first_seen") or today_s
         result.append(j)
 
+    sal_table = S.load_public(salary_path or out_path.parent / "salary_public.json")
+    with_salary = S.attach(result, sal_table, today)
+
     result.sort(key=lambda j: (j.get("deadline") or "9999-99-99", -(int((j.get("posted") or "0").replace("-", "") or 0))))
     new_today = sum(1 for j in result if j["first_seen"] == today_s)
     data = {
@@ -95,6 +101,8 @@ def collect(out_path: Path = OUT, env=None) -> dict:
         "sources": status,
         "total": len(result),
         "new_today": new_today,
+        "salary": {"count": with_salary, "public_updated": sal_table.get("updated"),
+                   "public_avg": S.averages(sal_table, today)},
         "jobs": result,
     }
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -104,7 +112,9 @@ def collect(out_path: Path = OUT, env=None) -> dict:
 
 def _summary(data: dict) -> str:
     lines = [f"## 식품 채용공고 수집 결과 ({data['updated_at']} KST)", "",
-             f"- 전체 {data['total']}건 · 오늘 새로 들어온 공고 {data['new_today']}건", "",
+             f"- 전체 {data['total']}건 · 오늘 새로 들어온 공고 {data['new_today']}건",
+             f"- 예상 연봉 표시 {data.get('salary', {}).get('count', 0)}건 "
+             f"(알리오 신입 초임 표 갱신일 {data.get('salary', {}).get('public_updated') or '없음'})", "",
              "| 소스 | 상태 | 건수 | 메모 |", "|---|---|---|---|"]
     icon = {"ok": "✅", "error": "⚠️", "no_key": "⏸️"}
     for s in data["sources"].values():
@@ -118,6 +128,10 @@ def _summary(data: dict) -> str:
 
 
 def main() -> int:
+    st = S.refresh_public(C.today_kst())
+    print(f"[연봉] 알리오 신입사원 초임 표: {st}")
+    if st["state"] == "error":
+        print(f"[경고] 알리오 신입사원 초임 표를 새로 받지 못했습니다: {st.get('message')}", file=sys.stderr)
     data = collect()
     text = _summary(data)
     print(text)

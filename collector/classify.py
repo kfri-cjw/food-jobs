@@ -184,3 +184,47 @@ def parse_date(value) -> str | None:
         return date(y, mo, d).isoformat()
     except ValueError:
         return None
+
+
+# ── 지원 자격 요약 ─────────────────────────────────────────
+_CERTS = [
+    ("영양사 면허", r"(?<!임상)영양사\s*(면허|자격)"),
+    ("임상영양사", r"임상\s*영양사"),
+    ("위생사", r"(?<!치과)(?<!산업)(?<!치과 )위생사\s*(면허|자격)"),
+    ("조리기능사", r"(한식|양식|중식|일식|복어)?\s*조리\s*(기능사|산업기사|기능장)"),
+    ("식품기사", r"식품\s*(기사|산업기사|기술사)"),
+    ("식품가공기능사", r"식품\s*가공\s*기능사"),
+    ("축산·수산 기사", r"(축산|수산제조)\s*(기사|산업기사)"),
+    ("제과·제빵기능사", r"제(과|빵)\s*기능사"),
+    ("바리스타", r"바리스타\s*(\d급|자격)"),
+    ("HACCP 교육", r"(HACCP|해썹)\s*(교육|팀장|이수|자격)"),
+    ("운전면허", r"(1종|2종)?\s*(보통|대형)?\s*운전\s*면허"),
+    ("컴퓨터활용능력", r"컴퓨터\s*활용\s*능력"),
+]
+_LANG = r"(TOEIC|토익|TEPS|텝스|OPIc|오픽|TOEFL|토플|JLPT|HSK|TOEIC\s*Speaking|토익\s*스피킹)"
+_LIMITS = [
+    ("지역 제한", r"(이전\s*)?지역\s*인재|주민등록.{0,15}(거주|소재)|(시|도|군)\s*거주자|거주\s*제한"),
+    ("고졸 전형", r"고졸\s*(제한|전형|채용)|고등학교\s*졸업\s*(예정)?자\s*(만|로\s*제한)"),
+    ("나이 제한", r"만\s*\d{2}\s*세\s*(이하|미만)"),
+    ("병역 필", r"병역\s*(필|을\s*필한|의무를\s*마친)"),
+]
+_MAJOR_CLAUSE = re.compile(r"([^,.;:()\[\]]{0,40}?)(?:관련\s*)?(?:학과|전공|계열)")
+_MAJOR_WORD = re.compile(r"(?:식품|영양|조리|외식|생명|미생물|화학|생물|축산|수산|농업|발효|보건|간호)[가-힣]{0,5}?(?:공학|과학|학)?(?=\s|·|/|,|및|또는|관련|학과|전공|계열|$)")
+
+
+def qualifications(*texts) -> dict:
+    """공고의 지원자격·우대조건 글에서 자격증·어학·전공·제한 조건을 뽑는다."""
+    text = re.sub(r"\s+", " ", _join(*texts))
+    if not text.strip():
+        return {}
+    certs = [name for name, pat in _CERTS if re.search(pat, text, re.I)]
+    langs = []
+    for m in re.finditer(_LANG + r"[^0-9가-힣]{0,6}(\d{3,4}|IM\d?|IH|AL|\d급|N\d)?", text, re.I):
+        word = m.group(1).upper().replace("토익", "TOEIC").replace("텝스", "TEPS").replace("오픽", "OPIC").replace("토플", "TOEFL")
+        label = f"{word} {m.group(2)}".strip() if m.group(2) else word
+        if label not in langs:
+            langs.append(label)
+    majors = list(dict.fromkeys(w.group(0) for c in _MAJOR_CLAUSE.finditer(text)
+                                for w in _MAJOR_WORD.finditer(c.group(1))))[:4]
+    limits = [name for name, pat in _LIMITS if re.search(pat, text)]
+    return {"certs": certs, "langs": langs[:3], "majors": majors, "limits": limits}
