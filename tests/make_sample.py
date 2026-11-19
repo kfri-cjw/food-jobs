@@ -11,5 +11,6 @@ if __name__ == "__main__":
     out = Path(__file__).resolve().parent.parent / "docs" / "data" / "sample.json"
     if out.exists():
         out.unlink()
-    data = M.collect(out, FAKE_ENV)
+    # 예시 기관용 가짜 신입 초임 표 (실제 기관 아님)
+    data = M.collect(out, FAKE_ENV, salary_path=Path(__file__).resolve().parent / "fixtures" / "salary_sample.json")
     print(f"예시 {data['total']}건 → {out}")
