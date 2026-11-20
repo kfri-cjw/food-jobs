@@ -1,11 +1,11 @@
 {
- "updated_at": "2026-11-20 03:21",
+ "updated_at": "2026-11-20 11:22",
  "today": "2026-11-20",
  "sources": {
   "alio": {
    "label": "잡알리오(공공기관)",
    "state": "ok",
-   "raw": 551,
+   "raw": 556,
    "count": 21,
    "message": null,
    "fields": [
