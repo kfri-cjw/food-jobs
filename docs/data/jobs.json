@@ -1,12 +1,12 @@
 {
- "updated_at": "2026-11-22 10:23",
- "today": "2026-11-22",
+ "updated_at": "2026-11-23 02:13",
+ "today": "2026-11-23",
  "sources": {
   "alio": {
    "label": "잡알리오(공공기관)",
    "state": "ok",
-   "raw": 516,
-   "count": 19,
+   "raw": 521,
+   "count": 21,
    "message": null,
    "fields": [
     "acbgCondLst",
@@ -54,10 +54,10 @@
    "message": "SARAMIN_KEY 미설정 — 건너뜀"
   }
  },
- "total": 18,
- "new_today": 0,
+ "total": 20,
+ "new_today": 2,
  "salary": {
-  "count": 18,
+  "count": 20,
   "public_updated": "2026-11-19",
   "public_avg": {
    "all": 4020,
@@ -917,6 +917,99 @@
     "type": "공기업",
     "avg_all": 4020,
     "avg_type": 4347
+   }
+  },
+  {
+   "id": "alio:307269",
+   "source": "alio",
+   "title": "한국폴리텍대학 전력기술교육원 업무직(조리원) 공개채용 공고",
+   "org": "학교법인한국폴리텍",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리"
+   ],
+   "emp": [
+    "무기계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "전남"
+   ],
+   "region_text": "전남광주",
+   "posted": "2026-11-23",
+   "deadline": "2026-12-04",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307269",
+   "food": "직무",
+   "detail": "음식서비스",
+   "quals": {
+    "certs": [],
+    "langs": [],
+    "majors": [],
+    "limits": [],
+    "text": "- 법인 인사규정 제19조의 결격사유에 해당하지 않은자\r\n- 임용예정일 기준 유효기간 내 건강진단결과보고서(보건증) 소지자\r\n- (학력·성별) 제한없음(정년 만60세)\r\n- 남자의 경우 병역을 필하였거나 면제된 자\r\n- 최종 합격자 발표 후 즉시 근무 가능한 자",
+    "pref": "장애인, 저소득층, 다문화가족자녀, 북한이탈주민, 자립준비청년, 취업지원 대상자 ※ 자세한 사항은 첨부파일의 공고문 참조"
+   },
+   "headcount": 1,
+   "first_seen": "2026-11-23",
+   "salary": {
+    "kind": "public_start",
+    "amount": 4337,
+    "year": 2025,
+    "regular": false,
+    "type": "기타공공기관",
+    "avg_all": 4020,
+    "avg_type": 3942
+   }
+  },
+  {
+   "id": "alio:307307",
+   "source": "alio",
+   "title": "2026년 5차 기간제 근로자 채용공고",
+   "org": "재단법인 건설기술교육원",
+   "org_type": "공기업·공공기관",
+   "jobs": [
+    "영양사·급식·조리",
+    "행정·사무"
+   ],
+   "emp": [
+    "인턴",
+    "계약직"
+   ],
+   "career": "신입·경력",
+   "edu": "학력무관",
+   "regions": [
+    "서울",
+    "인천"
+   ],
+   "region_text": "서울,인천",
+   "posted": "2026-11-23",
+   "deadline": "2026-12-07",
+   "deadline_note": null,
+   "url": "https://job.alio.go.kr/recruitview.do?idx=307307",
+   "food": "직무",
+   "detail": "경영.회계.사무,교육.자연.사회과학,문화.예술.디자인.방송,경비.청소,음식서비스",
+   "quals": {
+    "certs": [],
+    "langs": [],
+    "majors": [],
+    "limits": [
+     "지역 제한"
+    ],
+    "text": "- 성별·학력·연령·거주지 제한 없음",
+    "pref": "국가유공자 등에 따른 취업지원대상자, 의사상자 등에 따른 취업보호대상자, 「장애인 고용촉진 및 직업재활법」에 따른 장애인, 「지방대학 및 지역균형인재육성에 관한 법률」 에 따른 비수도권 지역인재, 「청년고용촉진특별법」에 따른 청년 등(공고문 우대 및 가점사항 참조)"
+   },
+   "headcount": 11,
+   "first_seen": "2026-11-23",
+   "salary": {
+    "kind": "public_start",
+    "amount": 4306,
+    "year": 2025,
+    "regular": false,
+    "type": "기타공공기관",
+    "avg_all": 4020,
+    "avg_type": 3942
    }
   }
  ]
