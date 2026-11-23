@@ -308,11 +308,13 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
     org: ["공기업·공공기관","정부출연·연구기관","대기업·주요 식품기업","외국계","중견·중소기업","병원·학교·복지기관"],
     job: ["R&D·제품개발","품질·식품안전","영양사·급식·조리","생산·공정관리","인허가·RA","영업·마케팅·MD","구매·물류·SCM","행정·사무","기타"],
     emp: ["정규직","무기계약직","계약직","인턴","파견·기타","기타"],
+    career: ["신입","신입·경력","경력","경력무관"],
     cert: ["자격증 요구 없음","영양사 면허","식품기사","위생사","조리기능사","HACCP 교육","원문 확인 필요"],
     region: ["서울","경기","인천","강원","충북","충남","대전","세종","전북","전남","광주","경북","경남","대구","울산","부산","제주","전국","해외"],
     size: ["1,000명 이상","300~999명","50~299명","50명 미만","공공·정부기관","정보 없음"],
     pay: ["금액 표시","회사내규·미기재"],
   };
+  const CAREER = {"신입":"신입", "신입·경력":"신입·경력", "경력":"경력", "무관":"경력무관"};
   const PUBLIC = new Set(["공기업·공공기관","정부출연·연구기관"]);
   const isPublic = j => PUBLIC.has(j.org_type);
   function sizeBand(j){
@@ -325,6 +327,7 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
   const GROUPS = [
     {key:"org", title:"기관 유형", get:j=>[j.org_type]},
     {key:"job", title:"직무", get:j=>j.jobs},
+    {key:"career", title:"경력", get:j=>[CAREER[j.career] || j.career || "경력무관"]},
     {key:"emp", title:"고용 형태", get:j=>j.emp},
     {key:"cert", title:"필요 자격증", get:j=>!j.quals ? ["원문 확인 필요"] : (j.quals.certs||[]).length ? j.quals.certs : ["자격증 요구 없음"]},
     {key:"region", title:"지역", get:j=>j.regions.length ? j.regions : ["지역 미기재"], select:true},
@@ -512,10 +515,11 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
     const min = EDU[Math.min(...lv)];
     return lv.length > 1 ? `${min} 이상` : min;
   }
-  const CAREER = {"신입":"신입", "신입·경력":"신입·경력", "경력":"경력", "무관":"경력무관"};
   function reqFact(j){
     const q = j.quals || {};
-    const main = [eduLabel(j.edu), CAREER[j.career] || j.career].filter(Boolean).join(" · ");
+    // 경력 연차가 있으면 원래 표기('경력3년↑')를 그대로
+    const car = j.career_text && /\d/.test(j.career_text) ? j.career_text.replace(/\s+/g, " ") : (CAREER[j.career] || j.career);
+    const main = [eduLabel(j.edu), car].filter(Boolean).join(" · ");
     const sub = [
       ...(q.certs||[]).map(x => `자격증 ${x}`),
       ...(q.langs||[]),

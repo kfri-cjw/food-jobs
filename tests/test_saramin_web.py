@@ -147,3 +147,19 @@ def test_public_jobs_get_no_company(tmp_path):
     jobs = [{"id": "a", "csn": "X", "org_type": "공기업·공공기관"}]
     st = CO.attach(jobs, TODAY, fetch_new=True, path=tmp_path / "c.json")
     assert st["fetched"] == 0 and "company" not in jobs[0]
+
+
+def test_meta_salary_only_for_image_postings(web, tmp_path, monkeypatch):
+    base = W.get
+
+    def image_detail(url, params, **kw):
+        if "view-detail" in url:
+            web.append((url, dict(params)))
+            return Resp("<html><img src='poster.png'></html>")
+        return base(url, params, **kw)
+    monkeypatch.setattr(W, "get", image_detail)
+    data = M.collect(tmp_path / "jobs.json", {"SARAMIN_WEB": "1"})
+    j = next(x for x in data["jobs"] if x["id"] == "saramin:90000002")   # 목록에 급여 없음 + 이미지 공고
+    assert j["salary"] is None and j["salary_note"] == "회사내규에 따름" and "quals" not in j
+    assert sum(1 for c in web if "relay/view" in c[0] and "detail" not in c[0]) == 1  # 급여 있는 공고는 안 받음
+    assert j["career_text"] == "경력3년↑" and j["career"] == "경력"

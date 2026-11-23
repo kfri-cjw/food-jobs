@@ -198,6 +198,7 @@ def to_job(r: dict, today: date | None = None) -> dict | None:
         "jobs": jobs or [config.JOB_DEFAULT],
         "emp": C.emp_types(r.get("emp", ""), title),
         "career": C.career_norm(r.get("career", "")),
+        "career_text": r.get("career") or None,   # '경력3년↑', '경력 5~10년' 같은 원래 표기
         "edu": _edu(r.get("edu", "")),
         "regions": C.regions(loc),
         "region_text": loc,
@@ -342,7 +343,7 @@ def enrich(jobs: list[dict], prev_by_id: dict, today: date | None = None) -> lis
             sleep(config.SARAMIN_WEB_DELAY)
             d = parse_detail(get(DETAIL_URL, {"rec_idx": rid, "rec_seq": 0}, headers=HEADERS, retries=2).text)
             meta = ""
-            if not d.get("salary_text") and not j.get("salary"):
+            if not d and not j.get("salary"):  # 이미지로만 된 공고만 공고 페이지 요약에서 급여 확인 (요청 수 절약)
                 sleep(config.SARAMIN_WEB_DELAY)
                 meta = parse_meta_salary(get(VIEW_URL, {"rec_idx": rid}, headers=HEADERS, retries=2).text)
         except SourceError:

@@ -21,7 +21,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 40        # 사람인 검색 화면 수집이 오래 걸려도 여기서 끊음
+    timeout-minutes: 55        # 사람인 검색 화면 수집이 오래 걸려도 여기서 끊음 (상세 300건 기준 약 25~30분)
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
