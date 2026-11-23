@@ -20,6 +20,16 @@ ALIO_MAX_PAGES = 40          # 100건 × 40 = 진행 중 공공기관 공고 전
 SARAMIN_MAX_PAGES = 2        # 키워드당 110건 × 2
 WORK24_MAX_PAGES = 2         # 키워드당 100건 × 2
 
+# 사람인 검색 화면 읽기 (SARAMIN_KEY가 없고 SARAMIN_WEB=1 일 때만) — 개인용
+SARAMIN_WEB_KEYWORDS = SARAMIN_KEYWORDS
+SARAMIN_WEB_MAX_PAGES = 2       # 키워드당 최신순 100건 × 2
+SARAMIN_WEB_DELAY = 1.5         # 요청 사이 쉬는 시간(초)
+SARAMIN_WEB_DETAIL_MAX = 150    # 한 번 실행에 상세(자격·급여·근무지)를 새로 받을 최대 공고 수 (나머지는 다음 실행)
+SARAMIN_WEB_EXCLUDE_SECTORS = ["헤드헌팅", "파견대행"]   # API의 sr=directhire와 같은 효과
+COMPANY_FETCH_MAX = 120         # 한 번 실행에 회사 규모(사원수·매출액)를 새로 받을 최대 회사 수
+COMPANY_REFRESH_DAYS = 60       # 회사 규모는 이 기간이 지나면 다시 받음
+HEADHUNTER_ORG_PATTERN = r"헤드헌팅|(?<!리)서치|써치|에치알|에이치알|(?<![A-Za-z])HR(?![A-Za-z])"
+
 # ─────────────────────────────────────────────
 # 2. 식품 관련성 판단
 # ─────────────────────────────────────────────

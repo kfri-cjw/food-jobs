@@ -11,6 +11,7 @@
   --line:#e4e3de; --line2:#d3d2cc;
   --accent:#0f6b63; --accent-ink:#fff; --accent-weak:#e3f1ee; --accent-line:#a9d3cc;
   --crit:#c22f2f; --crit-weak:#fbeaea; --warn-ink:#8a5a00; --warn-weak:#fdf3dc; --good:#0b7a0b;
+  --pub:#2457a0; --pub-weak:#e9f0fa; --pub-line:#b8cbe8;
   --radius:12px; --shadow:0 1px 2px rgba(0,0,0,.04),0 2px 8px rgba(0,0,0,.04);
 }
 @media (prefers-color-scheme: dark){
@@ -19,6 +20,7 @@
     --line:#2d2d2a; --line2:#3b3b37;
     --accent:#3fc7b6; --accent-ink:#0b1f1c; --accent-weak:#16302c; --accent-line:#245149;
     --crit:#f07070; --crit-weak:#3a1c1c; --warn-ink:#f4c35a; --warn-weak:#352a12; --good:#4cc94c;
+    --pub:#93b8f0; --pub-weak:#1a2536; --pub-line:#2e4466;
     --shadow:none;
   }
 }
@@ -93,6 +95,11 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
 .job .meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:13px;color:var(--ink2)}
 .job .org{font-weight:600;color:var(--ink)}
 .otype{font-size:11.5px;border:1px solid var(--line2);border-radius:6px;padding:0 6px;color:var(--ink2);white-space:nowrap}
+.otype.pub{color:var(--pub);background:var(--pub-weak);border-color:var(--pub-line);font-weight:650}
+.size{grid-column:1/2;display:flex;flex-wrap:wrap;gap:2px 0;font-size:12.5px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.size > span + span::before{content:"·";margin:0 6px;color:var(--muted)}
+.size b{color:var(--ink);font-weight:650}
+.size .none{color:var(--muted)}
 .new{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:.04em}
 .job .title{grid-column:1/2;font-size:16px;font-weight:650;line-height:1.4;text-decoration:none;margin:2px 0}
 .job .title:hover{text-decoration:underline;text-underline-offset:3px}
@@ -101,10 +108,17 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
 .tag{font-size:12px;background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:1px 7px;color:var(--ink2);white-space:nowrap}
 .tag.job-cat{color:var(--ink);border-color:var(--line2)}
 .tag.inst{border-style:dashed}
-.pay{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:13.5px;margin-top:3px}
-.pay b{font-weight:700;font-variant-numeric:tabular-nums}
-.pay small{font-size:12px;color:var(--muted)}
-.pay.ref b{font-weight:500;color:var(--ink2)}
+/* 급여 · 근무지 · 지원 자격 — 카드마다 같은 자리에 */
+.facts{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.35fr);
+  margin-top:8px;border:1px solid var(--line);border-radius:10px;background:var(--surface2);overflow:hidden}
+.fact{padding:8px 12px;min-width:0}
+.fact + .fact{border-left:1px solid var(--line)}
+.fact .k{display:block;font-size:11.5px;font-weight:650;color:var(--muted);letter-spacing:.02em}
+.fact b{display:block;font-size:14.5px;font-weight:700;line-height:1.35;font-variant-numeric:tabular-nums}
+.fact b.ref{font-weight:550;color:var(--ink2)}
+.fact b.none{font-weight:500;color:var(--muted)}
+.fact small{display:block;font-size:12px;color:var(--ink2);line-height:1.45;margin-top:2px}
+.fact small .cmp{margin-left:2px}
 .cmp{font-size:12px;font-weight:650;border-radius:6px;padding:0 6px;border:1px solid var(--line2);white-space:nowrap;font-variant-numeric:tabular-nums}
 .cmp.up{color:var(--accent);border-color:var(--accent-line);background:var(--accent-weak)}
 .cmp.down{color:var(--ink2)}
@@ -119,7 +133,7 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
 .quals details p{margin:4px 0 0;white-space:pre-wrap;line-height:1.5}
 .foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12px;color:var(--muted);margin-top:4px}
 .foot a{color:var(--ink2)}
-.dday{grid-column:2/3;grid-row:1/3;text-align:right;white-space:nowrap}
+.dday{grid-column:2/3;grid-row:1/4;text-align:right;white-space:nowrap}
 .dday b{display:inline-block;font-size:13px;font-weight:700;border-radius:8px;padding:2px 8px;background:var(--surface2);border:1px solid var(--line2);font-variant-numeric:tabular-nums}
 .dday small{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
 .dday.soon b{background:var(--crit-weak);color:var(--crit);border-color:color-mix(in srgb,var(--crit) 35%,transparent)}
@@ -160,8 +174,15 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
   .updated{text-align:left}.src-pills{justify-content:flex-start}
   .head{align-items:flex-start;flex-direction:column}
 }
+@media (max-width:600px){
+  .facts{grid-template-columns:1fr}
+  .fact{display:grid;grid-template-columns:60px minmax(0,1fr);column-gap:8px;padding:7px 11px}
+  .fact .k{grid-row:1/3;padding-top:2px}
+  .fact + .fact{border-left:0;border-top:1px solid var(--line)}
+}
 @media (max-width:420px){
   .job{grid-template-columns:1fr}
+  .size{grid-column:1/-1}
   .dday{grid-column:1/-1;grid-row:auto;text-align:left;order:-1}
   .dday small{display:inline;margin-left:6px}
   .kpi .v{font-size:22px}
@@ -211,6 +232,7 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
             <option value="posted">최신 등록순</option>
             <option value="org">기관명순</option>
             <option value="pay">예상 연봉 높은순</option>
+            <option value="size">회사 규모 큰순</option>
           </select>
           <button class="btn" id="share" title="지금 고른 필터가 담긴 주소를 복사합니다">필터 링크 복사</button>
         </div>
@@ -230,7 +252,7 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
         <tr><th>출처</th><th>모으는 범위</th></tr>
         <tr><td>잡알리오</td><td>공공기관 전체 공고 중 식품·영양·급식 직무(제목·NCS 분야 기준)이거나, 식품 관련 기관(한국식품연구원, aT, HACCP인증원 등)의 공고</td></tr>
         <tr><td>고용24</td><td>‘식품연구·식품품질·영양사·HACCP’ 등 키워드로 찾은 민간 공고 (배송·알바 등 비전공 단순직은 제외)</td></tr>
-        <tr><td>사람인</td><td>같은 방식의 키워드 검색 (헤드헌팅·파견 공고 제외)</td></tr>
+        <tr><td>사람인</td><td>같은 방식의 키워드 검색 (헤드헌팅·파견 공고 제외). 사람인 API 키가 없을 때는 사람인 검색 화면에서 최신 공고를 읽고, 공고 상세에서 자격요건·급여·근무지를 가져옵니다.</td></tr>
       </table>
       <h2>분류 기준</h2>
       <ul>
@@ -250,8 +272,15 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
         <li><b>공공기관 공고</b> — 알리오 경영공시의 <b>신입사원 초임</b>(기관별 일반정규직 평균, 성과급 등을 더한 연간 합계)입니다. 공고마다 다른 금액이 아니라 <b>기관 평균</b>이라 직급·학력·경력에 따라 실제 금액은 다릅니다.</li>
         <li>정규직이 아닌 공고(기간제·무기계약직·인턴)에는 같은 금액을 <b>흐리게 ‘참고’</b>로만 보여줍니다. 이런 자리는 급여 체계가 달라 실제로는 더 적은 경우가 많습니다.</li>
         <li><b>평균 대비 %</b> — 알리오에 신입 초임을 공시한 공공기관 전체의 단순평균과 비교한 값입니다. 마우스를 올리면 같은 유형(공기업·준정부기관·기타공공기관) 평균도 보입니다.</li>
-        <li><b>민간 공고</b> — 공고에 금액이 적혀 있을 때만 그대로 보여줍니다(‘회사내규에 따름’ 등은 표시 안 함).</li>
+        <li><b>민간 공고</b> — 공고에 적힌 금액을 그대로 보여줍니다. 금액이 없으면 ‘회사내규에 따름’, ‘면접 후 결정’ 같은 문구를 흐리게 보여줍니다.</li>
+        <li>사람인 목록에는 연봉·월급 구분이 없어 1,000만원 이상은 연봉, 미만은 월급으로 추정합니다. 공고 상세를 읽으면 상세에 적힌 문구로 바뀝니다.</li>
         <li>지원 전에는 반드시 원문 공고의 보수 조건을 확인하세요.</li>
+      </ul>
+      <h2>회사 규모는 어디서 오나요?</h2>
+      <ul>
+        <li><b>민간 기업</b> — 사람인 기업정보의 기업형태(대기업·중견·중소), 사원 수(대부분 국민연금 가입자 기준), 매출액, 설립연도, 업종입니다. 회사마다 60일에 한 번 새로 확인합니다.</li>
+        <li><b>공공기관·정부출연기관</b> — 규모 대신 <span class="otype pub" style="font-size:11.5px">🏛 공기업·공공기관</span> 같은 파란 표시로 따로 구분합니다.</li>
+        <li>‘회사 규모 정보 없음’은 아직 확인하지 않았거나 사람인에 정보가 없는 회사입니다.</li>
       </ul>
       <h2>꼭 알아두세요</h2>
       <ul>
@@ -281,7 +310,17 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
     emp: ["정규직","무기계약직","계약직","인턴","파견·기타","기타"],
     cert: ["자격증 요구 없음","영양사 면허","식품기사","위생사","조리기능사","HACCP 교육","원문 확인 필요"],
     region: ["서울","경기","인천","강원","충북","충남","대전","세종","전북","전남","광주","경북","경남","대구","울산","부산","제주","전국","해외"],
+    size: ["1,000명 이상","300~999명","50~299명","50명 미만","공공·정부기관","정보 없음"],
+    pay: ["금액 표시","회사내규·미기재"],
   };
+  const PUBLIC = new Set(["공기업·공공기관","정부출연·연구기관"]);
+  const isPublic = j => PUBLIC.has(j.org_type);
+  function sizeBand(j){
+    if (isPublic(j)) return "공공·정부기관";
+    const n = j.company && j.company.employees;
+    if (n == null) return "정보 없음";
+    return n >= 1000 ? "1,000명 이상" : n >= 300 ? "300~999명" : n >= 50 ? "50~299명" : "50명 미만";
+  }
   // 필터 그룹: key, 제목, 값 추출, 타입
   const GROUPS = [
     {key:"org", title:"기관 유형", get:j=>[j.org_type]},
@@ -289,6 +328,8 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
     {key:"emp", title:"고용 형태", get:j=>j.emp},
     {key:"cert", title:"필요 자격증", get:j=>!j.quals ? ["원문 확인 필요"] : (j.quals.certs||[]).length ? j.quals.certs : ["자격증 요구 없음"]},
     {key:"region", title:"지역", get:j=>j.regions.length ? j.regions : ["지역 미기재"], select:true},
+    {key:"size", title:"회사 규모 (사원 수)", get:j=>[sizeBand(j)]},
+    {key:"pay", title:"급여 정보", get:j=>[j.salary ? "금액 표시" : "회사내규·미기재"]},
     {key:"src", title:"출처", get:j=>[SRC[j.source]||j.source]},
   ];
   const QUICK = {
@@ -334,7 +375,7 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
   // ── 필터링 ──
   function matches(j, skipKey){
     if (state.q){
-      const hay = (j.title + " " + j.org + " " + (j.detail||"")).toLowerCase();
+      const hay = [j.title, j.org, j.detail, j.region_text, j.address, j.company && j.company.industry].filter(Boolean).join(" ").toLowerCase();
       if (!state.q.toLowerCase().split(/\s+/).filter(Boolean).every(w => hay.includes(w))) return false;
     }
     for (const g of GROUPS){
@@ -351,6 +392,7 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
       s === "posted" ? (b.posted||"").localeCompare(a.posted||"") || (b.first_seen||"").localeCompare(a.first_seen||"")
       : s === "org" ? a.org.localeCompare(b.org, "ko")
       : s === "pay" ? payNum(b) - payNum(a) || (a.deadline||far).localeCompare(b.deadline||far)
+      : s === "size" ? sizeNum(b) - sizeNum(a) || (a.deadline||far).localeCompare(b.deadline||far)
       : (a.deadline||far).localeCompare(b.deadline||far) || (b.posted||"").localeCompare(a.posted||""));
   }
 
@@ -415,57 +457,100 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
     $("#applyFilters").textContent = `결과 ${JOBS.filter(j => matches(j)).length}건 보기`;
   }
 
-  // 예상 연봉 — 정렬용 숫자(만원/년). 공고 문구는 첫 금액, 월급이면 ×12
+  // 예상 연봉 — 정렬용 숫자(만원/년). 월급 표기이거나 1,000만원 미만이면 월급으로 보고 ×12
   const won = n => n.toLocaleString("ko-KR");
   function payNum(j){
     const p = j.salary; if (!p) return -1;
     // 정규직이 아닌 공고의 '참고' 금액은 실제 급여가 아니므로 금액이 있는 공고들 뒤로
     if (p.kind === "public_start") return p.regular ? p.amount : p.amount / 1e6;
-    const m = (p.text||"").replace(/,/g,"").match(/(\d+(?:\.\d+)?)\s*만/);
-    if (!m || /시급|일급/.test(p.text)) return -1;
-    const v = parseFloat(m[1]);
-    return /월/.test(p.text) ? v * 12 : v;
+    const t = (p.text||"").replace(/,/g,"");
+    if (/시급|일급|주급/.test(t)) return -1;
+    let m = t.match(/(\d+(?:\.\d+)?)\s*만/), v;
+    if (m) v = parseFloat(m[1]);
+    else { m = t.match(/(\d{6,})\s*원/); if (!m) return -1; v = parseInt(m[1], 10) / 1e4; }
+    return /월/.test(t) || v < 1000 ? v * 12 : v;
   }
-  function payLine(j){
-    const p = j.salary; if (!p) return "";
-    if (p.kind === "public_start"){
-      const basis = `${p.year} 알리오 경영공시 · 이 기관 정규직 신입 평균 초임`;
+  const sizeNum = j => isPublic(j) ? -0.5 : (j.company && j.company.employees != null ? j.company.employees : -1);
+
+  // ① 급여
+  function payFact(j){
+    const p = j.salary;
+    let b, s = "";
+    if (p && p.kind === "public_start"){
       let cmp = "";
       if (p.avg_all){
         const r = Math.round((p.amount / p.avg_all - 1) * 100);
         const t = `공공기관 신입 초임 평균 ${won(p.avg_all)}만원` + (p.avg_type ? ` · ${p.type} 평균 ${won(p.avg_type)}만원` : "") + " (알리오 공시 기관 단순평균)";
-        cmp = `<span class="cmp ${r >= 3 ? "up" : r <= -3 ? "down" : ""}" title="${t}">공공기관 평균 대비 ${r > 0 ? "+" : ""}${r}%</span>`;
+        cmp = `<span class="cmp ${r >= 3 ? "up" : r <= -3 ? "down" : ""}" title="${t}">평균 대비 ${r > 0 ? "+" : ""}${r}%</span>`;
       }
-      return p.regular
-        ? `<div class="pay" title="${basis}"><span>신입 초임</span><b>약 ${won(p.amount)}만원</b>${cmp}<small>${p.year} 알리오 공시 · 정규직 기준 · 평균 ${p.avg_all ? won(p.avg_all) + "만원" : "-"}</small></div>`
-        : `<div class="pay ref" title="${basis}. 이 공고는 정규직이 아니라 실제 급여는 다를 수 있습니다."><span>참고: 이 기관 정규직 신입 초임</span><b>약 ${won(p.amount)}만원</b><small>이 공고는 정규직 아님 · 실제 급여는 원문 확인</small></div>`;
+      if (p.regular){ b = `<b title="${p.year} 알리오 경영공시 · 이 기관 정규직 신입 평균 초임">약 ${won(p.amount)}만원</b>`; s = `신입 초임(기관 평균) ${cmp}`; }
+      else { b = `<b class="ref" title="이 공고는 정규직이 아니라 실제 급여는 다를 수 있습니다">참고 약 ${won(p.amount)}만원</b>`; s = "이 기관 정규직 초임 · 이 공고는 정규직 아님"; }
+    } else if (p){
+      b = `<b>${esc(p.text)}</b>`; s = "공고 기재";
+    } else {
+      b = `<b class="none">${esc(j.salary_note || "미기재")}</b>`; s = j.salary_note ? "금액 비공개" : "원문 확인";
     }
-    return `<div class="pay"><span>급여</span><b>${esc(p.text)}</b><small>공고 기재</small></div>`;
+    return `<div class="fact"><span class="k">급여</span>${b}<small>${s}</small></div>`;
   }
 
-  // 지원 자격: 학력·경력·자격증·어학·전공·제한을 한 줄로
+  // ② 근무지 — 시·군·구까지 크게, 상세 주소는 아래 작게
+  function locFact(j){
+    const short = (j.region_text || j.regions.join("·") || "").split(/\s+/).slice(0, 3).join(" ");
+    const addr = j.address && j.address !== short ? j.address : "";
+    const b = short ? `<b>${esc(short)}</b>` : `<b class="none">미기재</b>`;
+    return `<div class="fact"><span class="k">근무지</span>${b}${addr ? `<small title="${esc(addr)}">${esc(addr)}</small>` : ""}</div>`;
+  }
+
+  // ③ 지원 자격 — 학력·경력을 크게, 자격증·어학·전공을 아래 작게
   const EDU = ["고졸","대졸(2~3년)","대졸(4년)","석사","박사"];
   function eduLabel(e){
     if (!e) return "";
     const xs = e.split(/[,·]/).map(x => x.trim()).filter(Boolean);
-    if (xs.some(x => /무관/.test(x))) return "무관";
+    if (xs.some(x => /무관/.test(x))) return "학력무관";
     const lv = xs.map(x => EDU.indexOf(x)).filter(i => i >= 0);
     if (!lv.length) return e;
     const min = EDU[Math.min(...lv)];
     return lv.length > 1 ? `${min} 이상` : min;
   }
-  function qualLine(j){
+  const CAREER = {"신입":"신입", "신입·경력":"신입·경력", "경력":"경력", "무관":"경력무관"};
+  function reqFact(j){
+    const q = j.quals || {};
+    const main = [eduLabel(j.edu), CAREER[j.career] || j.career].filter(Boolean).join(" · ");
+    const sub = [
+      ...(q.certs||[]).map(x => `자격증 ${x}`),
+      ...(q.langs||[]),
+      (q.majors||[]).length ? `전공 ${q.majors.join("·")}` : "",
+    ].filter(Boolean).join(" · ");
+    const pending = !j.quals && j.source === "saramin" ? "세부 자격은 다음 갱신 때 추가" : "";
+    return `<div class="fact"><span class="k">지원 자격</span><b>${esc(main || "원문 확인")}</b>${sub || pending ? `<small>${esc(sub || pending)}</small>` : ""}</div>`;
+  }
+
+  // 지원 제한·채용 인원·원문 요약
+  function extraLine(j){
     const q = j.quals || {}, c = [];
-    const ed = eduLabel(j.edu);
-    if (ed) c.push(`<span class="q"><i>학력</i>${esc(ed)}</span>`);
-    c.push(`<span class="q"><i>경력</i>${j.career === "무관" ? "무관" : esc(j.career)}</span>`);
-    (q.certs||[]).forEach(x => c.push(`<span class="q cert"><i>자격증</i>${esc(x)}</span>`));
-    (q.langs||[]).forEach(x => c.push(`<span class="q"><i>어학</i>${esc(x)}</span>`));
-    if ((q.majors||[]).length) c.push(`<span class="q"><i>전공</i>${esc(q.majors.join("·"))}</span>`);
     (q.limits||[]).forEach(x => c.push(`<span class="q warn">${esc(x)}</span>`));
     if (j.headcount) c.push(`<span class="q"><i>채용</i>${j.headcount}명</span>`);
-    const raw = (q.text || q.pref) ? `<details><summary>지원자격·우대조건 원문 요약 보기</summary>${q.text ? `<p><b>지원자격</b> ${esc(q.text)}</p>` : ""}${q.pref ? `<p><b>우대</b> ${esc(q.pref)}</p>` : ""}</details>` : "";
-    return `<div class="quals"><span class="lab">지원 자격</span>${c.join("")}${raw}</div>`;
+    const raw = (q.text || q.pref) ? `<details><summary>자격요건·우대사항 원문 보기</summary>${q.text ? `<p><b>자격요건</b> ${esc(q.text)}</p>` : ""}${q.pref ? `<p><b>우대</b> ${esc(q.pref)}</p>` : ""}</details>` : "";
+    return c.length || raw ? `<div class="quals">${c.join("")}${raw}</div>` : "";
+  }
+
+  // 회사 규모 — 민간 기업만. 공공기관·정부출연기관은 배지 색으로 따로 표시
+  function eok(v){
+    if (v == null) return "";
+    if (v >= 10000) return `${(v / 10000).toFixed(v >= 100000 ? 0 : 1).replace(/\.0$/, "")}조원`;
+    return `${won(Math.round(v))}억원`;
+  }
+  function sizeLine(j){
+    if (isPublic(j)) return "";
+    const c = j.company;
+    if (!c) return `<div class="size"><span class="none">회사 규모 정보 없음</span></div>`;
+    const parts = [];
+    if (c.type) parts.push(`<span><b>${esc(c.type)}</b></span>`);
+    if (c.employees != null) parts.push(`<span title="${esc(c.employees_src ? "출처: " + c.employees_src : "")}">사원 <b>${won(c.employees)}명</b></span>`);
+    if (c.revenue_eok != null) parts.push(`<span title="${esc(c.revenue || "")}">매출 <b>${eok(c.revenue_eok)}</b></span>`);
+    if (c.founded) parts.push(`<span>${c.founded}년 설립</span>`);
+    if (c.industry) parts.push(`<span>${esc(c.industry)}</span>`);
+    return parts.length ? `<div class="size">${parts.join("")}</div>` : "";
   }
 
   function card(j){
@@ -479,17 +564,17 @@ select.sel{width:100%;padding:7px 10px;border:1px solid var(--line2);border-radi
     const tags = [
       ...j.jobs.map(t => `<span class="tag job-cat">${esc(t)}</span>`),
       ...j.emp.filter(e => e !== "기타").map(t => `<span class="tag">${esc(t)}</span>`),
-      j.regions.length ? `<span class="tag">${esc(j.regions.join("·"))}</span>` : "",
       j.food === "기관" ? `<span class="tag inst" title="식품 관련 기관의 공고 (직무는 식품과 무관할 수 있음)">식품기관 공고</span>` : "",
     ].join("");
     const also = (j.also||[]).map(a => `<a href="${esc(safeUrl(a.url))}" target="_blank" rel="noopener">${esc(SRC[a.source]||a.source)}에서 보기</a>`).join(" · ");
     return `<article class="job">
-      <div class="meta"><span class="otype">${esc(j.org_type)}</span><span class="org">${esc(j.org)}</span>${isNew(j) ? `<span class="new">NEW</span>` : ""}</div>
+      <div class="meta"><span class="otype ${isPublic(j) ? "pub" : ""}">${isPublic(j) ? "🏛 " : ""}${esc(j.org_type)}</span><span class="org">${esc(j.org)}</span>${isNew(j) ? `<span class="new">NEW</span>` : ""}</div>
       ${dd}
+      ${sizeLine(j)}
       <a class="title" href="${esc(safeUrl(j.url))}" target="_blank" rel="noopener">${esc(j.title)}</a>
       <div class="tags">${tags}</div>
-      ${qualLine(j)}
-      ${payLine(j)}
+      <div class="facts">${payFact(j)}${locFact(j)}${reqFact(j)}</div>
+      ${extraLine(j)}
       <div class="foot"><span>출처 ${esc(SRC[j.source]||j.source)}</span>${j.posted ? `<span>등록 ${md(j.posted)}</span>` : ""}${j.detail ? `<span>${esc(j.detail)}</span>` : ""}${also ? `<span>${also}</span>` : ""}</div>
     </article>`;
   }

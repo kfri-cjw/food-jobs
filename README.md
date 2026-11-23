@@ -8,9 +8,20 @@ GitHub Actions가 **하루 두 번(06:17, 18:17)** 자동으로 새 공고를 �
 |---|---|---|
 | 잡알리오 (공공데이터포털) | 공공기관 전체 공고 중 식품 직무 + 식품 관련 기관 공고 | `DATA_GO_KR_KEY` |
 | 고용24 | 민간 공고 (중견·중소 식품기업 많음) | `WORK24_KEY` |
-| 사람인 | 민간 공고 (대기업·식품사 많음) | `SARAMIN_KEY` |
+| 사람인 | 민간 공고 (대기업·식품사 많음) | `SARAMIN_KEY` (없으면 검색 화면에서 대신 수집 — 아래 참고) |
 
 키는 있는 것만 넣어도 됩니다. 없는 출처는 건너뛰고 나머지로 동작합니다.
+
+### 사람인 API 키가 없을 때 (개인용 대체 수집)
+
+워크플로에 `SARAMIN_WEB: "1"`이 켜져 있어서, `SARAMIN_KEY`가 없으면 **사람인 검색 화면**에서 최신 공고를 읽습니다.
+나중에 `SARAMIN_KEY`를 등록하면 코드 수정 없이 자동으로 공식 API로 바뀝니다 (공고 번호가 같아 NEW 표시도 유지).
+
+- 로그인 없는 공개 화면만, robots.txt가 막지 않은 경로만 읽습니다 (목록 `/zf_user/search/recruit`, 상세 `/zf_user/jobs/relay/view-detail`, 기업정보 `/zf_user/company-info/view`).
+- 요청 사이에 1.5초씩 쉬고, **공고 상세와 회사 정보는 처음 보는 것만** 받습니다 (한 번 실행에 상세 최대 150건, 회사 최대 120곳 — 나머지는 다음 실행).
+- 상세에서 **급여 문구 · 근무지 주소 · 자격요건/우대사항 · 채용 인원**을, 기업정보에서 **기업형태 · 사원 수 · 매출액 · 설립연도 · 업종**을 가져옵니다. 회사 정보는 `docs/data/companies.json`에 저장해 60일마다 다시 확인합니다.
+- 사람인이 허락한 API 방식이 아니므로 **개인적으로 보는 용도로만** 쓰세요. 화면 구조가 바뀌면 0건이 되며, 그때는 Actions Summary에 오류로 표시되고 직전 데이터를 유지합니다.
+- 끄려면 `.github/workflows/update.yml`에서 `SARAMIN_WEB` 줄을 지우면 됩니다.
 
 ---
 
@@ -97,7 +108,8 @@ GitHub Actions가 **하루 두 번(06:17, 18:17)** 자동으로 새 공고를 �
 
 | 하고 싶은 것 | 고칠 파일 |
 |---|---|
-| 검색 키워드 추가·삭제 | `collector/config.py` → `SARAMIN_KEYWORDS`, `WORK24_KEYWORDS` |
+| 검색 키워드 추가·삭제 | `collector/config.py` → `SARAMIN_KEYWORDS`, `WORK24_KEYWORDS` (사람인 검색 화면도 같은 키워드) |
+| 사람인 검색 화면 수집량·속도 | `collector/config.py` → `SARAMIN_WEB_MAX_PAGES`, `SARAMIN_WEB_DELAY`, `SARAMIN_WEB_DETAIL_MAX`, `COMPANY_FETCH_MAX` |
 | 대기업·외국계 목록, 식품 관련 기관 목록 | `collector/config.py` → `BIG_FOOD_COMPANIES`, `FOREIGN_COMPANIES`, `FOOD_INSTITUTIONS` |
 | 걸러낼 단순직 낱말 (배송·알바 등) | `collector/config.py` → `NOISE_KEYWORDS` |
 | 직무 분류 규칙 | `collector/config.py` → `JOB_CATEGORIES` |
@@ -123,13 +135,15 @@ cd docs && python -m http.server 8000   # http://localhost:8000 에서 확인
 collector/            수집·분류 (Python)
   config.py           키워드·기업 목록·분류 규칙  ← 주로 여기만 고치면 됨
   classify.py         분류 함수
-  sources/            출처별 API 호출 (alio.py, work24.py, saramin.py)
+  sources/            출처별 수집 (alio.py, work24.py, saramin.py, saramin_web.py=키 없을 때 사람인 검색 화면)
+  company.py          회사 규모(기업형태·사원 수·매출액) 붙이기
   main.py             실행 진입점: 합치기·중복 제거·NEW 표시·마감 공고 제거
 docs/                 사이트 (GitHub Pages로 배포)
   index.html          화면
   data/jobs.json      수집 결과 (Actions가 자동 갱신)
   data/sample.json    예시 데이터 (?demo=1)
   data/links.json     바로가기 탭 내용
+  data/companies.json 회사 규모 저장본 (Actions가 자동 갱신)
 tests/                테스트와 가짜 API 응답
 .github/workflows/    자동 실행 설정
 ```
@@ -142,6 +156,7 @@ tests/                테스트와 가짜 API 응답
 | 잡알리오 0건인데 오류 없음 | Actions 로그의 Summary 확인. API 응답 항목 이름이 바뀌었으면 `collector/sources/alio.py`의 필드명 수정 |
 | 고용24 오류 | 기업회원 인증키인지, 심사 승인됐는지 |
 | 사람인 오류 코드 2 / 4 | 2: 키 오류, 4: 일일 호출 한도 초과 → `config.py`에서 키워드 수나 `SARAMIN_MAX_PAGES` 줄이기 |
+| 사람인 "검색 화면에서 0건" | 사람인 화면 구조가 바뀌었거나 GitHub Actions 접속이 막힘 → `collector/sources/saramin_web.py`의 `parse_list` 선택자(`div.item_recruit` 등) 확인 |
 | 사이트가 안 바뀜 | Settings → Pages의 Source가 `GitHub Actions`인지, Actions 실행이 성공했는지 |
 | 60일 넘게 자동 실행이 멈춤 | 공개 저장소는 활동이 없으면 예약 실행이 꺼질 수 있음 → Actions 탭에서 다시 Enable |
 

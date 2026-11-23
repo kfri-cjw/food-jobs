@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-19 12:20",
+ "updated_at": "2026-11-23 09:47",
  "today": "2026-11-19",
  "sources": {
   "alio": {
@@ -8,6 +8,7 @@
    "raw": 7,
    "count": 6,
    "message": null,
+   "mode": "api",
    "fields": [
     "acbgCondNmLst",
     "aplyQlfcCn",
@@ -33,6 +34,7 @@
    "raw": 5,
    "count": 4,
    "message": null,
+   "mode": "api",
    "fields": [
     "busino",
     "career",
@@ -58,6 +60,7 @@
    "raw": 6,
    "count": 5,
    "message": null,
+   "mode": "api",
    "fields": [
     "active",
     "close-type",
@@ -85,6 +88,12 @@
    "year": 2025,
    "by_type": {}
   }
+ },
+ "company": {
+  "fetched": 0,
+  "failed": 0,
+  "cached": 0,
+  "count": 0
  },
  "jobs": [
   {
@@ -200,6 +209,7 @@
    "food": "직무",
    "detail": "면류, 마카로니 및 유사 식품 제조업",
    "salary": null,
+   "salary_note": null,
    "also": [
     {
      "source": "saramin",
@@ -235,6 +245,8 @@
    "food": "직무",
    "detail": "식품가공·개발 · 식품연구,품질관리,HACCP",
    "salary": null,
+   "salary_note": "면접후 결정",
+   "csn": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -300,6 +312,8 @@
    "food": "직무",
    "detail": "식품가공·개발 · 인허가,RA",
    "salary": null,
+   "salary_note": null,
+   "csn": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -330,6 +344,7 @@
     "kind": "posting",
     "text": "연봉 3200만원 ~ 3600만원"
    },
+   "salary_note": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -394,6 +409,7 @@
    "food": "직무",
    "detail": "건강기능식품 제조업",
    "salary": null,
+   "salary_note": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -422,6 +438,8 @@
    "food": "직무",
    "detail": "식품가공·개발 · 생산관리,공정관리",
    "salary": null,
+   "salary_note": null,
+   "csn": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -482,6 +500,7 @@
     "kind": "posting",
     "text": "월급 250만원"
    },
+   "salary_note": null,
    "first_seen": "2026-11-19"
   },
   {
@@ -509,6 +528,8 @@
    "food": "직무",
    "detail": "급식·출장요리 · 영양사,조리사",
    "salary": null,
+   "salary_note": null,
+   "csn": null,
    "first_seen": "2026-11-19"
   }
  ]

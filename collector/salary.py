@@ -151,6 +151,12 @@ def attach(jobs: list[dict], table: dict, today: date) -> int:
     return n
 
 
+def posting_note(text: str) -> str | None:
+    """금액이 없는 급여 문구('회사내규에 따름', '면접 후 결정') — 화면에 흐리게 보여줄 용도."""
+    t = re.sub(r"\s+", " ", text or "").strip()
+    return t[:60] if t and not re.search(r"\d", t) else None
+
+
 def posting_salary(text: str) -> dict | None:
     """민간 공고에 적힌 급여 문구. 숫자가 없는 것('회사내규에 따름', '면접후 결정')은 버린다."""
     t = re.sub(r"\s+", " ", text or "").strip()

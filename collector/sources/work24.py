@@ -93,4 +93,5 @@ def to_job(r: dict) -> dict | None:
         "food": "직무",
         "detail": ind,
         "salary": S.posting_salary(sal),
+        "salary_note": S.posting_note(sal),
     }

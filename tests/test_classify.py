@@ -116,3 +116,10 @@ def test_qualifications():
     # 치과위생사는 위생사 자격으로 보지 않음
     assert "위생사" not in C.qualifications("치과위생사 면허 소지자")["certs"]
     assert C.qualifications("") == {}
+
+
+def test_company_name_lists_need_word_start():
+    # '하이랜드' 속 '이랜드'처럼 다른 회사 이름 속에 섞인 경우는 대기업으로 보지 않음
+    assert C.org_type("(주)하이랜드이노베이션", "saramin") == "중견·중소기업"
+    assert C.org_type("(주)이랜드이츠", "saramin") == "대기업·주요 식품기업"
+    assert C.org_type("한국네슬레", "saramin") == "외국계"

@@ -29,6 +29,18 @@ def contains_any(text: str, words) -> bool:
     return any(_token_regex(w).search(text) for w in words)
 
 
+@lru_cache(maxsize=None)
+def _name_regex(word: str) -> re.Pattern:
+    """회사 이름 목록용: 한글 이름은 다른 한글 낱말 속에 섞여 있으면 맞지 않게 한다 ('하이랜드' 속 '이랜드' 제외)."""
+    if re.match(r"[가-힣]", word):
+        return re.compile(rf"(?:(?<![가-힣])|(?<=한국)){re.escape(word)}")  # '한국네슬레'처럼 '한국'은 허용
+    return _token_regex(word)
+
+
+def name_has(name: str, words) -> bool:
+    return bool(name) and any(_name_regex(w).search(name) for w in words)
+
+
 def _join(*parts) -> str:
     out = []
     for p in parts:
@@ -77,9 +89,9 @@ def org_type(name: str, source: str, hint: str | None = None) -> str:
         return "공기업·공공기관"
     if hint in config.ORG_TYPES:
         return hint
-    if contains_any(name, config.FOREIGN_COMPANIES):
+    if name_has(name, config.FOREIGN_COMPANIES):
         return "외국계"
-    if contains_any(name, config.BIG_FOOD_COMPANIES):
+    if name_has(name, config.BIG_FOOD_COMPANIES):
         return "대기업·주요 식품기업"
     if contains_any(name, config.INSTITUTION_NAME_PATTERNS):
         return "병원·학교·복지기관"

@@ -6,6 +6,7 @@ GET https://oapi.saramin.co.kr/job-search
 from __future__ import annotations
 
 import html
+from urllib.parse import parse_qs, urlsplit
 
 from .. import classify as C
 from .. import salary as S
@@ -95,4 +96,7 @@ def to_job(r: dict) -> dict | None:
         "food": "직무",
         "detail": " · ".join(x for x in (industry, codes[:60]) if x),
         "salary": S.posting_salary(_name(r.get("salary"))),
+        "salary_note": S.posting_note(_name(r.get("salary"))),
+        "csn": (parse_qs(urlsplit(str(((r.get("company") or {}).get("detail") or {}).get("href") or "")).query)
+                .get("csn") or [None])[0],
     }
