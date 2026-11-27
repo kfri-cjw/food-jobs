@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-27",
+"updated": "2026-11-28",
 "source": "사람인 기업정보",
 "items": {
 "TG9PRlNGak1hV29hU3duVTc4UGFsdz09": {
@@ -9982,6 +9982,714 @@
 "industry": "건강기능식품 제조업",
 "name": "(주)뉴온",
 "checked": "2026-11-27"
+},
+"Y2FrTEY0VzQ5Z3drSE1IQ0hHbEZsdz09": {
+"industry": "외식업·식음료",
+"name": "주식회사로라엔터테인먼트(뱅뱅)",
+"checked": "2026-11-28"
+},
+"ME5hYTQ4SDJ5Ymh5YlFxaUFja3RKdz09": {
+"founded": 2021,
+"type": "중소기업",
+"employees": 4,
+"employees_src": "국민연금",
+"industry": "경영 컨설팅업",
+"name": "(주)에프엔아이컴퍼니",
+"checked": "2026-11-28"
+},
+"Ym5iTWlxZURiNGlKem1obnIyOU9RZz09": {
+"industry": "기타제조업",
+"name": "과일수선집",
+"checked": "2026-11-28"
+},
+"SFJTWG5OdGVPZmpodjFCTVE0TmtJQT09": {
+"founded": 1982,
+"type": "스타트업",
+"employees": 55,
+"employees_src": "국민연금",
+"revenue": "545억 5,097만원",
+"revenue_eok": 545.51,
+"industry": "장류 제조업",
+"name": "매일 식품 (주)",
+"checked": "2026-11-28"
+},
+"eGwvRGZIUjBpSDNtUGZVSEZqUXZzUT09": {
+"founded": 2026,
+"industry": "식품가공·개발",
+"name": "주식회사움트다앤코끼리카페",
+"checked": "2026-11-28"
+},
+"TGo1ZjI5bklZVEs5YVA0QTFCQWZzZz09": {
+"founded": 2015,
+"type": "중소기업",
+"industry": "맥아 및 맥주 제조업",
+"name": "(주)한울앤제주",
+"checked": "2026-11-28"
+},
+"RE8ybUUvL0QrVytHTlZIV0hOTU5jQT09": {
+"founded": 2012,
+"type": "중소기업",
+"employees": 14,
+"employees_src": "국민연금",
+"revenue": "21억 7,018만원",
+"revenue_eok": 21.7,
+"industry": "상품 종합 도매업",
+"name": "(주)도스마스",
+"checked": "2026-11-28"
+},
+"OWorVGFITkJTeWh0MW0rTjE5SlhCUT09": {
+"founded": 2004,
+"type": "중소기업",
+"employees": 28,
+"employees_src": "국민연금",
+"revenue": "119억 1,269만원",
+"revenue_eok": 119.13,
+"industry": "가금류 가공 및 저장 처리업",
+"name": "(주)육화원에프앤디",
+"checked": "2026-11-28"
+},
+"d3Qzb3FEQnFyOHFlZTZFRE9lbzJvdz09": {
+"founded": 2013,
+"type": "중소기업",
+"industry": "화장품 제조업",
+"name": "(주)에코바이오의학연구소",
+"checked": "2026-11-28"
+},
+"a3VkNGJ5SnlBUVBJTDYwQTlVOXdUUT09": {
+"founded": 2024,
+"type": "중소기업",
+"employees": 12,
+"employees_src": "국민연금",
+"industry": "빵류 제조업",
+"name": "(주)빵집오빠",
+"checked": "2026-11-28"
+},
+"NFRSOUxVVlU3K3FoUkcyQS81di9NZz09": {
+"founded": 2000,
+"industry": "외식업·식음료",
+"name": "(주)리치빔",
+"checked": "2026-11-28"
+},
+"Z29SY0RNa0hCRXBEdnd4a2hUWUpoQT09": {
+"founded": 2012,
+"type": "중소기업",
+"employees": 28,
+"employees_src": "국민연금",
+"revenue": "118억 69만원",
+"revenue_eok": 118.01,
+"industry": "식물성 유지 제조업",
+"name": "(주)아라움",
+"checked": "2026-11-28"
+},
+"cldVdXlWZnVRUFdnRlc3ZThsRDB3Zz09": {
+"founded": 2020,
+"type": "중소기업",
+"employees": 4,
+"employees_src": "국민연금",
+"revenue": "48억 3,949만원",
+"revenue_eok": 48.39,
+"industry": "전자상거래 소매업",
+"name": "(주)멸치",
+"checked": "2026-11-28"
+},
+"TS9iK3g2MXowdXVjMmpNMnV0TVBTdz09": {
+"name": "맛나우동돈까스",
+"checked": "2026-11-28"
+},
+"QVVKNldvS0dEdTA5dHZlSjUyQUFnUT09": {
+"founded": 2000,
+"type": "중소기업",
+"employees": 86,
+"employees_src": "국민연금",
+"revenue": "875억 1,882만원",
+"revenue_eok": 875.19,
+"industry": "빵류, 과자류, 당류, 초콜릿 도매업",
+"name": "(주)리치빔",
+"checked": "2026-11-28"
+},
+"QXJVUFpRSCtjVE1heDEvRHR1cUE0UT09": {
+"founded": 2020,
+"type": "중소기업",
+"employees": 0,
+"employees_src": "국민연금",
+"revenue": "19억 6,065만원",
+"revenue_eok": 19.61,
+"industry": "서양식 음식점업",
+"name": "(주)리틀넥",
+"checked": "2026-11-28"
+},
+"OHk3aWhjTmJpTW1ORkZ0cDF2ZnFoZz09": {
+"founded": 2001,
+"type": "중소기업",
+"employees": 45,
+"employees_src": "국민연금",
+"revenue": "253억 3,201만원",
+"revenue_eok": 253.32,
+"industry": "기타 가공식품 도매업",
+"name": "(주)동그랑",
+"checked": "2026-11-28"
+},
+"RTRZejQvdTM1WmtSUktFbWVGOGxaUT09": {
+"founded": 2013,
+"type": "중소기업",
+"employees": 4,
+"employees_src": "국민연금",
+"revenue": "4억 5,389만원",
+"revenue_eok": 4.54,
+"industry": "맥아 및 맥주 제조업",
+"name": "파머스맥주(주)농업회사법인",
+"checked": "2026-11-28"
+},
+"V3FyZFRMRHJWdjUva2FGanNiYlN5dz09": {
+"founded": 2016,
+"type": "중소기업",
+"employees": 3,
+"employees_src": "국민연금",
+"revenue": "8억 2,919만원",
+"revenue_eok": 8.29,
+"industry": "응용 소프트웨어 개발 및 공급업",
+"name": "(주)쿡플레이",
+"checked": "2026-11-28"
+},
+"TGlJZ0dqWFdNbSs4Qlo1ZkI3Mm8ydz09": {
+"founded": 2011,
+"type": "중견기업",
+"employees": 242,
+"employees_src": "국민연금",
+"revenue": "3,169억 5,057만원",
+"revenue_eok": 3169.51,
+"industry": "기타 가금류 및 조류 사육업",
+"name": "농업회사법인(주)사조원",
+"checked": "2026-11-28"
+},
+"T0ZDeHNyMVEyeGNVMnJUZTg0Zkk5UT09": {
+"founded": 2014,
+"type": "중소기업",
+"employees": 4,
+"employees_src": "국민연금",
+"revenue": "510억 6,693만원",
+"revenue_eok": 510.67,
+"industry": "과실류 도매업",
+"name": "(주)농업회사법인이화원",
+"checked": "2026-11-28"
+},
+"V0E1WEE5SEVTSGlBS3IzQzVqWjNPdz09": {
+"founded": 2017,
+"type": "중소기업",
+"employees": 10,
+"employees_src": "국민연금",
+"revenue": "81억 9,927만원",
+"revenue_eok": 81.99,
+"industry": "가금류 가공 및 저장 처리업",
+"name": "농업회사법인(주)피밀리",
+"checked": "2026-11-28"
+},
+"bzNpRTFlYkZ6dlgyWUxHd0hVbEJ2Zz09": {
+"founded": 1997,
+"type": "중소기업",
+"employees": 3,
+"employees_src": "국민연금",
+"revenue": "10억 1,074만원",
+"revenue_eok": 10.11,
+"industry": "고용 알선업",
+"name": "(주)스탠튼체이스코리아",
+"checked": "2026-11-28"
+},
+"Y0xicVVvOFprbzNwRDMycENrNktzdz09": {
+"founded": 2025,
+"type": "중소기업",
+"employees": 11,
+"employees_src": "국민연금",
+"revenue": "196억 7,559만원",
+"revenue_eok": 196.76,
+"industry": "전자상거래 소매업",
+"name": "(주)더프레시",
+"checked": "2026-11-28"
+},
+"cmErWkdkbE9PUGFVd3JTeUFLT1RIUT09": {
+"founded": 1974,
+"type": "중견기업",
+"employees": 483,
+"employees_src": "국민연금",
+"industry": "기타 식품 첨가물 제조업",
+"name": "(주)엠에스씨",
+"checked": "2026-11-28"
+},
+"K3RZU2tlQ1JUNkxsVXl2Wmp0Tjk2dz09": {
+"type": "중소기업",
+"employees": 21,
+"employees_src": "국민연금",
+"name": "(주)디일공이",
+"checked": "2026-11-28"
+},
+"Y3NGYytLQTlsMHVRejlkRFBSSFZRQT09": {
+"founded": 2020,
+"type": "중소기업",
+"employees": 14,
+"employees_src": "국민연금",
+"revenue": "51억 2,373만원",
+"revenue_eok": 51.24,
+"industry": "수산동물 건조 및 염장품 제조업",
+"name": "(주)이유에프앤씨",
+"checked": "2026-11-28"
+},
+"TGRKVTgwSEdnbkE1dENFNnBrazVXdz09": {
+"founded": 2019,
+"type": "중소기업",
+"employees": 109,
+"employees_src": "국민연금",
+"revenue": "1,192억 6,242만원",
+"revenue_eok": 1192.62,
+"industry": "기타 보관 및 창고업",
+"name": "(주)콜로세움코퍼레이션",
+"checked": "2026-11-28"
+},
+"UVNUZ01SMlZMUVd1VEExamNPeDBCZz09": {
+"founded": 1996,
+"employees": 290,
+"employees_src": "국민연금",
+"revenue": "4,728억 8,731만원",
+"revenue_eok": 4728.87,
+"industry": "건강기능식품 제조업",
+"name": "종근당건강(주)",
+"checked": "2026-11-28"
+},
+"NWI5QTBRM1dZVElMeUpxRU9ZQ2d1Zz09": {
+"type": "대기업",
+"employees": 75,
+"employees_src": "국민연금",
+"revenue": "1조 5,000억원",
+"revenue_eok": 15000.0,
+"industry": "식품가공·개발",
+"name": "삼양사 인천2공장",
+"checked": "2026-11-28"
+},
+"TlZIL3RCYWdleGtQM20vOEJNZ1djdz09": {
+"founded": 2018,
+"type": "중소기업",
+"employees": 49,
+"employees_src": "국민연금",
+"revenue": "206억 4,191만원",
+"revenue_eok": 206.42,
+"industry": "육류 포장육 및 냉동육 가공업 (가금류 제외)",
+"name": "(주)왕건",
+"checked": "2026-11-28"
+},
+"QUhBZDhnSjNWYnd3QTRQMEZuUFFLUT09": {
+"founded": 2024,
+"type": "중소기업",
+"employees": 7,
+"employees_src": "국민연금",
+"revenue": "12억 7,458만원",
+"revenue_eok": 12.75,
+"industry": "기타 가공식품 도매업",
+"name": "농업회사법인(주)지엔에프앤비",
+"checked": "2026-11-28"
+},
+"M21KckF2MDFjZ2p4b1NIK3VvZi9iUT09": {
+"founded": 2022,
+"type": "중소기업",
+"employees": 65,
+"employees_src": "국민연금",
+"revenue": "95억 2,970만원",
+"revenue_eok": 95.3,
+"industry": "기관 구내식당업",
+"name": "(주)더채움",
+"checked": "2026-11-28"
+},
+"K2dTdjZ3MGxrd1RXQ1hpaEtuejJWZz09": {
+"industry": "외식업·식음료",
+"name": "주식회사 윤춘프레쉬 춘담",
+"checked": "2026-11-28"
+},
+"RjR6SG9pajdiUGg3SDRrTy9wSzJxdz09": {
+"founded": 2010,
+"type": "중소기업",
+"employees": 22,
+"employees_src": "국민연금",
+"revenue": "314억 3,729만원",
+"revenue_eok": 314.37,
+"industry": "조미료 도매업",
+"name": "(주)호수",
+"checked": "2026-11-28"
+},
+"bDd0L29xQmJWa3NZZXlQT3h1SnhTZz09": {
+"type": "중소기업",
+"employees": 11,
+"employees_src": "국민연금",
+"name": "메이크업아이(주)",
+"checked": "2026-11-28"
+},
+"NGYxMDVqTmI4Zm9heEF3d1psYk5KUT09": {
+"founded": 2013,
+"type": "기타",
+"revenue": "36억 9,973만원",
+"revenue_eok": 37.0,
+"industry": "일반 병원",
+"name": "의료법인허명의료재단",
+"checked": "2026-11-28"
+},
+"YWtleXJIa2s1MkJHV0tjdk84aEk1UT09": {
+"founded": 2013,
+"type": "기타",
+"employees": 7,
+"employees_src": "국민연금",
+"revenue": "121억 4,241만원",
+"revenue_eok": 121.42,
+"industry": "그 외 기타 특정 상품 중개업",
+"name": "행복도시락 사회적협동조합",
+"checked": "2026-11-28"
+},
+"cGFDVkg1QnZRRWxZWUt4NVM4SStiQT09": {
+"founded": 2000,
+"type": "중소기업",
+"employees": 99,
+"employees_src": "국민연금",
+"revenue": "436억 9,609만원",
+"revenue_eok": 436.96,
+"industry": "건강기능식품 제조업",
+"name": "엠에스바이오텍(주)",
+"checked": "2026-11-28"
+},
+"aUlJSE9xS3pmS2M0UTFxTFNPd3VpQT09": {
+"type": "비영리",
+"employees": 5,
+"employees_src": "국민연금",
+"revenue": "5억 7,626만원",
+"revenue_eok": 5.76,
+"industry": "경영 컨설팅업",
+"name": "(사)한국식품안전협회",
+"checked": "2026-11-28"
+},
+"bEMrUzIzek1QVDFJajljZ3FUb3M5QT09": {
+"founded": 2013,
+"type": "대기업",
+"employees": 79,
+"employees_src": "국민연금",
+"revenue": "833억 6,686만원",
+"revenue_eok": 833.67,
+"industry": "경영 컨설팅업",
+"name": "(주)설빙",
+"checked": "2026-11-28"
+},
+"YnZWckVKNGpnaUVrZkJ6QVFZcnFMQT09": {
+"founded": 2006,
+"type": "중소기업",
+"employees": 35,
+"employees_src": "국민연금",
+"revenue": "441억 8,404만원",
+"revenue_eok": 441.84,
+"industry": "육류 가공식품 도매업",
+"name": "(주)혜인식품",
+"checked": "2026-11-28"
+},
+"Z1hEbFpoZUNjSHJ3Q1NXZ29PWk5Mdz09": {
+"employees": 53,
+"employees_src": "국민연금",
+"name": "(주)제이케이글로벌홀딩스",
+"checked": "2026-11-28"
+},
+"bVNrMXJ6MXBmbnpiR0N1ekdOMlpoUT09": {
+"founded": 2019,
+"type": "중소기업",
+"employees": 3,
+"employees_src": "국민연금",
+"industry": "기타 비알코올 음료 제조업",
+"name": "(주)링커코퍼레이션",
+"checked": "2026-11-28"
+},
+"ekRqaVNmTHk3UzlMNjFVV2xtQkFOQT09": {
+"founded": 2014,
+"type": "중소기업",
+"employees": 91,
+"employees_src": "국민연금",
+"revenue": "297억 2,219만원",
+"revenue_eok": 297.22,
+"industry": "상품 종합 도매업",
+"name": "(주)아이센스에프앤비",
+"checked": "2026-11-28"
+},
+"YmFEMlJQY0oxc0RWQzYyOFA4QVhDUT09": {
+"type": "중소기업",
+"employees": 10,
+"employees_src": "국민연금",
+"industry": "경영 컨설팅업",
+"name": "라메르판지",
+"checked": "2026-11-28"
+},
+"Ujk0TUpuZ2NlMlVpSXFObThYMVBYUT09": {
+"employees": 31,
+"employees_src": "국민연금",
+"industry": "의료(병원종류별)",
+"name": "인천삼성요양병원",
+"checked": "2026-11-28"
+},
+"WmpwT294RGhaZ0tjbFVzTDFLWmlKUT09": {
+"industry": "외식업·식음료",
+"name": "LG화학오창점",
+"checked": "2026-11-28"
+},
+"K1hVQVhkRHlUNzNheGN1UEpTT3RRdz09": {
+"founded": 2013,
+"type": "중소기업",
+"employees": 32,
+"employees_src": "국민연금",
+"revenue": "54억 6,547만원",
+"revenue_eok": 54.65,
+"industry": "기관 구내식당업",
+"name": "(주)푸드창고",
+"checked": "2026-11-28"
+},
+"UE0yaWhKZUdDRWloM1RKWHQvaE1Edz09": {
+"type": "중소기업",
+"employees": 45,
+"employees_src": "국민연금",
+"name": "다원푸드서비스(주)",
+"checked": "2026-11-28"
+},
+"MmN4REpoWnpvU0dHcml1UXRJMFl3Zz09": {
+"founded": 2000,
+"type": "기타",
+"employees": 3058,
+"employees_src": "국민연금",
+"industry": "일반 병원",
+"name": "국립암센터",
+"checked": "2026-11-28"
+},
+"eS9zTnNXSWJWYUdHOW5hQWRIdCtKdz09": {
+"founded": 2009,
+"type": "중소기업",
+"employees": 32,
+"employees_src": "국민연금",
+"revenue": "57억 6,930만원",
+"revenue_eok": 57.69,
+"industry": "일반 의원",
+"name": "(의)아주효성의료재단",
+"checked": "2026-11-28"
+},
+"a29wYml4QWYwWGpEN2V3V2gybTZFdz09": {
+"founded": 2015,
+"industry": "호텔·여행·항공",
+"name": "주식회사 즐거운세상 인터불고 호텔지점",
+"checked": "2026-11-28"
+},
+"YVhBajNmQUZHeGpPZS9uY3ZMcTdDdz09": {
+"type": "중소기업",
+"employees": 119,
+"employees_src": "국민연금",
+"revenue": "79억 2,002만원",
+"revenue_eok": 79.2,
+"industry": "일반 병원",
+"name": "다나힐요양병원",
+"checked": "2026-11-28"
+},
+"M2ZPNG9KZU9RbVI4UEF3R2xiR21oUT09": {
+"industry": "외식업·식음료",
+"name": "써브웨이노량진역점",
+"checked": "2026-11-28"
+},
+"Um1sUDF2Sk1COFZXNFZ0NW5odGdPdz09": {
+"founded": 2022,
+"type": "중소기업",
+"employees": 5,
+"employees_src": "국민연금",
+"revenue": "54억 575만원",
+"revenue_eok": 54.06,
+"industry": "육류 포장육 및 냉동육 가공업 (가금류 제외)",
+"name": "정호푸드(주)",
+"checked": "2026-11-28"
+},
+"NWpjZGFpcE1MRFhLZmxKRlZFUk8wZz09": {
+"founded": 2026,
+"type": "중소기업",
+"industry": "사회복지",
+"name": "앨리스 인서울 요양원",
+"checked": "2026-11-28"
+},
+"cURtZTJPTzBJUHc0ZUVCc28yaGc4QT09": {
+"founded": 2020,
+"type": "중소기업",
+"employees": 10,
+"employees_src": "국민연금",
+"revenue": "23억 8,282만원",
+"revenue_eok": 23.83,
+"industry": "커피 가공업",
+"name": "(주)온유어사이드",
+"checked": "2026-11-28"
+},
+"c1VvYVlmbEpCYXl5eHRwYm5SSHZUZz09": {
+"type": "중소기업",
+"revenue": "350억 7,649만원",
+"revenue_eok": 350.76,
+"industry": "건강기능식품 제조업",
+"name": "(주)익스트림",
+"checked": "2026-11-28"
+},
+"VkxJS2taR3BKYVBMT3V3MkJsYTdrQT09": {
+"founded": 1984,
+"type": "중소기업",
+"employees": 69,
+"employees_src": "국민연금",
+"revenue": "769억 9,036만원",
+"revenue_eok": 769.9,
+"industry": "화장품 및 화장용품 도매업",
+"name": "(주)오쎄",
+"checked": "2026-11-28"
+},
+"UXBoZjdLTWppbjNScnJWZ0xjMExDUT09": {
+"founded": 2017,
+"type": "스타트업",
+"employees": 21,
+"employees_src": "국민연금",
+"industry": "시스템 소프트웨어 개발 및 공급업",
+"name": "(주)스타일셀러",
+"checked": "2026-11-28"
+},
+"bWNhaUY2MlVna3NldnlUay94NVJEdz09": {
+"founded": 2010,
+"type": "중소기업",
+"employees": 9,
+"employees_src": "국민연금",
+"revenue": "300억 713만원",
+"revenue_eok": 300.07,
+"industry": "양돈업",
+"name": "대성웰그로(주)",
+"checked": "2026-11-28"
+},
+"SmtnQkVTRG5qM09nMXoxL0hIMVRpZz09": {
+"founded": 1956,
+"type": "대기업",
+"employees": 199,
+"employees_src": "국민연금",
+"industry": "상품 종합 도매업",
+"name": "SK네트웍스(주)",
+"checked": "2026-11-28"
+},
+"blc1K2tlRkd1Q01jTExUUW9UWE9kQT09": {
+"founded": 1996,
+"type": "중소기업",
+"employees": 308,
+"employees_src": "국민연금",
+"industry": "그 외 기타 의료용 기기 제조업",
+"name": "(주)오상헬스케어",
+"checked": "2026-11-28"
+},
+"T0djaWxwdHQweTJETjdUS3kyS2JWZz09": {
+"founded": 2018,
+"type": "중소기업",
+"employees": 30,
+"employees_src": "국민연금",
+"revenue": "21억 3,931만원",
+"revenue_eok": 21.39,
+"industry": "그 외 기타 의료용 기기 제조업",
+"name": "(주)아크",
+"checked": "2026-11-28"
+},
+"Mko1TXRuS0cwVVcydGFEeHlyYUdHQT09": {
+"founded": 2022,
+"type": "중소기업",
+"employees": 37,
+"employees_src": "국민연금",
+"revenue": "57억 3,558만원",
+"revenue_eok": 57.36,
+"industry": "도시락류 제조업",
+"name": "(주)메리밀",
+"checked": "2026-11-28"
+},
+"Y3NKQVdubDJ6bXBvdXRvaGJ5Ymhzdz09": {
+"founded": 2022,
+"type": "중소기업",
+"employees": 36,
+"employees_src": "국민연금",
+"revenue": "104억 9,946만원",
+"revenue_eok": 104.99,
+"industry": "건강보조용 액화식품 제조업",
+"name": "(주)에이브바이오랩스",
+"checked": "2026-11-28"
+},
+"amZUSk5TTGs0MndaeVJFN3U0cnZPdz09": {
+"founded": 1999,
+"type": "중소기업",
+"revenue": "501억 8,475만원",
+"revenue_eok": 501.85,
+"industry": "천연 및 혼합조제 조미료 제조업",
+"name": "(주)아이씨푸드",
+"checked": "2026-11-28"
+},
+"enNwSlI0MlhvZ1ZDcThsSStiK3JjUT09": {
+"founded": 2018,
+"type": "중소기업",
+"employees": 27,
+"employees_src": "국민연금",
+"industry": "기타 기술 시험, 검사 및 분석업",
+"name": "(주)씨아이알에스그룹코리아",
+"checked": "2026-11-28"
+},
+"dy9vbXBLakU4UU1wdVZyZHE3WEc4UT09": {
+"founded": 2022,
+"type": "중소기업",
+"employees": 51,
+"employees_src": "국민연금",
+"revenue": "215억 4,455만원",
+"revenue_eok": 215.45,
+"industry": "응용 소프트웨어 개발 및 공급업",
+"name": "(주)휴머스온",
+"checked": "2026-11-28"
+},
+"QnJpWHJqcFNNU0ZVcDZySlBMeHhmUT09": {
+"founded": 2022,
+"type": "중소기업",
+"employees": 9,
+"employees_src": "국민연금",
+"revenue": "2억 8,761만원",
+"revenue_eok": 2.88,
+"industry": "농림수산학 및 수의학 연구개발업",
+"name": "(주)제이앤제이바이오헬스케어",
+"checked": "2026-11-28"
+},
+"K0xFU3crKzF2ZjB3UGNSMkhKcGZRZz09": {
+"founded": 2002,
+"type": "대기업",
+"employees": 57,
+"employees_src": "국민연금",
+"revenue": "628억 3,962만원",
+"revenue_eok": 628.4,
+"industry": "인삼식품 제조업",
+"name": "(주)농협홍삼",
+"checked": "2026-11-28"
+},
+"K1B4dW44SmJhbE84ZGFpNFRRMVBtUT09": {
+"founded": 2022,
+"type": "중소기업",
+"employees": 9,
+"employees_src": "국민연금",
+"revenue": "2억 3,191만원",
+"revenue_eok": 2.32,
+"industry": "의학 및 약학 연구개발업",
+"name": "(주)닥터비랩",
+"checked": "2026-11-28"
+},
+"MFJvZ2dyeGdpaTYxSzlycVU5NlVYdz09": {
+"founded": 2001,
+"type": "중소기업",
+"employees": 147,
+"employees_src": "국민연금",
+"revenue": "580억 7,920만원",
+"revenue_eok": 580.79,
+"industry": "건강기능식품 제조업",
+"name": "(주)비오팜",
+"checked": "2026-11-28"
+},
+"Yk5IT0FiZTcrNTVKNmFyUUVHM1ptdz09": {
+"founded": 2010,
+"type": "중소기업",
+"employees": 3,
+"employees_src": "국민연금",
+"revenue": "8억 266만원",
+"revenue_eok": 8.03,
+"industry": "기타 가공식품 도매업",
+"name": "(주)초원한방플러스",
+"checked": "2026-11-28"
 }
 }
 }
